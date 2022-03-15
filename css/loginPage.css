@@ -1,0 +1,183 @@
+#main{
+    display: flex;  
+    justify-content: center;
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-bottom: -40px;
+}
+
+body{
+    background: #fafafa;
+}
+
+.login_box header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login_box header .logo_img {
+    margin: 20px;
+}
+
+.login_box{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 350px;
+    height: 381.6px;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 10px;
+}
+
+.display_right .login_box header{
+    height: 85px;
+    width: 348px;
+}
+
+.display_left{
+    margin-right: 20px;
+    margin-bottom: 12px;
+}
+
+.signup_box{
+    height: 41px;
+    width: 348px;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.signup_text{
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup_text a{
+    color: #0095f5;
+    font-weight: bold;
+}
+
+.login_form input{
+    display: block;
+    width: 266px;
+    height: 36px;
+    color: rgba(var(--i1d, 38, 38, 38), 1);
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    margin: 3px auto;
+    background-color: #fafafa;
+    font-size: 12px;
+}
+
+.loginBtn{
+    width: 268px;
+    height: 30px;
+    margin: 8px 40px;
+    background-color: #b9dffc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.login_perforation{
+    width: 268px;
+    height: 15px;
+    display: flex;
+    margin: 10px 40px 18px 40px;
+}
+
+.login_line{
+    width: 103px;
+    height: 1px;
+    background-color: #8e8e8e;
+}
+
+.login_line_text{
+    font-size: 13px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.facebook_login{
+    margin: 8px 40px 8px 40px;
+    justify-content: center;
+    display: flex;
+}
+
+.sprite_facebook_icon {
+	background: url('../images/background01.png') no-repeat -234px -234px;
+	width: 24px;
+	height: 24px;
+}
+
+.facebook_btn{
+    background-color: white;
+    border: 0;
+    outline: 0;
+}
+
+.facebook_text{
+    font-size: 14px;
+    color: #385185;
+}
+
+.display_right footer{
+    position: relative;
+    top: 20px;
+    color: rgba(var(--fe0, 0, 55, 107), 1);
+    font-size: 12px;
+    text-align: center;
+}
+
+.application_download{
+    width: 350px;
+    height: 101.6px;
+}
+
+.application_download .download_text{
+    width: 310px;
+    height: 18px;
+    margin: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.store_img{
+    width: 350px;
+    height: 43.6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.store_img img{
+    height: 40px;
+    width: 136px;
+    margin-right: 10px;
+}
+
+#footer{
+    margin-top: 40px;
+}
+
+#footer ul{
+    display: flex;
+    justify-content: center;
+    height: 23px;
+}
+
+#footer ul li{
+    display: flex;
+    float: left;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #8e8e8e;
+}
