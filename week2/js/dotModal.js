@@ -1,9 +1,11 @@
 const dots = document.querySelector(".dots-modal-wrapper");
-const dotsOpen = document.querySelector(".dots-modal-open");
+const dotsOpen = document.querySelectorAll(".dots-modal-open");
 const dotsClose = document.querySelector(".dots-modal-close");
 
-dotsOpen.addEventListener("click", function(){
-    dots.style.display="flex"; 
+dotsOpen.forEach(element => {
+    element.addEventListener("click", function(){
+        dots.style.display="flex"; 
+    });
 });
 dotsClose.addEventListener("click", function(){
     dots.style.display="none"; 
