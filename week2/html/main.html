@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/main.css" rel="stylesheet" type='text/css'/>
   </head>
-  <body >
+  <body>
     <section class="flex">
       <!--맨 위 nav bar-->
       <nav>
@@ -43,7 +43,7 @@
                 <img src="../image/user-removebg-preview.png" style="height:45px;">
                 <span class="user-name">4o9oon</span>
               </div>
-              <img src="../image/dots.png" style="width: 20px">
+              <img src="../image/dots.png" class="dots-modal-open" style="width: 20px">
             </div>
             <img src="../image/post.PNG" style="width : 615px;">
             <div class="post-icons">
@@ -71,7 +71,7 @@
                 <img src="../image/user-removebg-preview.png" style="height:45px;">
                 <span class="user-name">4o9oon</span>
               </div>
-              <img src="../image/dots.png" style="width: 20px">
+              <img src="../image/dots.png" class="dots-modal-open" style="width: 20px">
             </div>
             <img src="../image/post.PNG" style="width : 615px;">
             <div class="post-icons">
@@ -158,10 +158,20 @@
             <span>© 2022 Instagram from Meta</span>
           </div>
         </div>
-
-        
       </main>
+      <div class="dots-modal-wrapper">
+        <div class="dots-modal">
+          <div class="dots-modal-li li-red">신고</div>
+          <div class="dots-modal-li li-red">팔로우 취소</div>
+          <div class="dots-modal-li">게시물로 이동</div>
+          <div class="dots-modal-li">공유 대상...</div>
+          <div class="dots-modal-li">링크 복사</div>
+          <div class="dots-modal-li">퍼가기</div>
+          <div class="dots-modal-li dots-modal-close">취소</div>
+        </div> <!--안에 div를 button으로 바꾸면 디자인이 이상해짐-->
+      </div>
     </section>
     <script src="../js/icon.js"></script>
+    <script src="../js/dotModal.js"></script>
   </body>
 </html>
