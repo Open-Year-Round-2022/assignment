@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/main.css" rel="stylesheet" type='text/css'/>
-    <script src="https://kit.fontawesome.com/c3a4130b4b.js" crossorigin="anonymous"></script>
-    
   </head>
   <body >
     <section class="flex">
@@ -15,7 +13,7 @@
         <div>
           <img src="../image/instagram.png" stlye="height:40px;">
           <div class="nav-search">
-            <i class="fa-solid fa-magnifying-glass"></i> <!--돋보기-->
+            <img src="../image/search-interface-symbol.png">
             <input type="text" placeholder="검색">
           </div>
           <div class="nav-icons">
@@ -45,22 +43,22 @@
                 <img src="../image/user-removebg-preview.png" style="height:45px;">
                 <span class="user-name">4o9oon</span>
               </div>
-              <i class="fa-solid fa-ellipsis"></i>
+              <img src="../image/dots.png" style="width: 20px">
             </div>
             <img src="../image/post.PNG" style="width : 615px;">
             <div class="post-icons">
               <div class="post-icons-left">
-                <img src="../image/empty heart.png" style="margin-right : 20px;">
+                <img src="../image/empty heart.png" onclick="icon_click(this)" style="margin-right : 20px;">
                 <img src="../image/comment.png" style="margin-right : 20px;">
                 <img src="../image/send.png">
               </div>
-              <img src="../image/empty bookmark.png"><!--책갈피--> 
+              <img src="../image/empty bookmark.png" onclick="icon_click(this)"><!--책갈피--> 
             </div>
             <span class="post-like">좋아요 100000개</span>
             <div class="post-content"><span class="user-name">4o9oon</span><span>어쩌구저쩌구</span><span>...더보기</span></div>
             <span class="post-time">49분 전</span>
             <div class="post-comments">
-              <i class="fa-regular fa-face-smile fa-lg"></i>
+              <img src="../image/smile.png" style="width: 20px">
               <input class="post-comments-input" placeholder="댓글 달기...">
               <span class="blue-span">게시</span>
             </div>
@@ -73,22 +71,22 @@
                 <img src="../image/user-removebg-preview.png" style="height:45px;">
                 <span class="user-name">4o9oon</span>
               </div>
-              <i class="fa-solid fa-ellipsis"></i>
+              <img src="../image/dots.png" style="width: 20px">
             </div>
             <img src="../image/post.PNG" style="width : 615px;">
             <div class="post-icons">
               <div class="post-icons-left">
-                <img src="../image/empty heart.png" style="margin-right : 20px;">
+                <img src="../image/empty heart.png" onclick="icon_click(this)" style="margin-right : 20px;">
                 <img src="../image/comment.png" style="margin-right : 20px;">
                 <img src="../image/send.png">
               </div>
-              <img src="../image/empty bookmark.png"><!--책갈피--> 
+              <img src="../image/empty bookmark.png" onclick="icon_click(this)"><!--책갈피--> 
             </div>
             <span class="post-like">좋아요 100000개</span>
             <div class="post-content"><span class="user-name">4o9oon</span><span>어쩌구저쩌구</span><span>...더보기</span></div>
             <span class="post-time">49분 전</span>
             <div class="post-comments">
-              <i class="fa-regular fa-face-smile fa-lg"></i>
+              <img src="../image/smile.png" style="width: 20px">
               <input class="post-comments-input" placeholder="댓글 달기...">
               <span class="blue-span">게시</span>
             </div>
@@ -164,5 +162,6 @@
         
       </main>
     </section>
+    <script src="../js/icon.js"></script>
   </body>
 </html>

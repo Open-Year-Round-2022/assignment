@@ -42,8 +42,10 @@ nav img{
     align-items: center;
     justify-content: space-evenly;
 }
-.nav-search i{
-    opacity:0.3;
+.nav-search img{
+    opacity:0.4;
+    width : 18px;
+    height :18px;
 }
 .nav-search input{
     border-style: none;
@@ -249,3 +251,4 @@ main{
 .side-container-footer span:last-child{
     margin-top : 20px;
 }
+
