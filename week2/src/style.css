@@ -1,9 +1,17 @@
 
-
-#react-root, article, div, footer, header, main, nav, section {
+#react-root, article, div, footer, header, main, nav, section, form {
   display: flex;
   align-items: stretch;
   border: 1 solid #000
+  vertical-align: baseline;
+  flex-shrink: 0;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  --bg-default: 250,250,250;
+  --dark-color: 38, 38, 38;
+  --white-color: 255, 255, 255;
+  --border-color: 219, 219, 219;
 }
 
 section {
@@ -14,6 +22,7 @@ section {
 }
 
 main {
+  background-color: rgba(var(--bg-default), 1);
   flex-grow: 1;
   order: 4;
 }
@@ -29,9 +38,236 @@ article {
 }
 
 .phoneContainer {
+  align-self: center;
   flex-direction: column;
+  flex-basis: 380.32px;
+  background-image: url(images/phones/home_phones.png);
+  background-position: -46px 0;
+  background-size: 468.32px 634.15px;
+  height: 581.15px;
+  margin-bottom: 12px;
+  margin-right: 32px;
 }
 
 .loginContainer {
   flex-direction: column;
+  color: rgba(var(--dark-color), 1);
+  flex-grow: 1;
+  justify-content: center;
+  margin-top: 12px;
+  max-width: 350px;
+}
+
+.loginBox {
+  align-items: center;
+  background-color: rgba(var(--white-color), 1);
+  border: 1px solid rgba(var(--border-color), 1);
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+}
+
+.headline {
+  margin: 22px auto 12px;
+  display: block;
+  overflow: hidden;
+  text-indent: 110%;
+  white-space: nowrap;
+}
+
+.inputsContainer {
+  margin-bottom: 10px;
+  max-width: 350px;
+  width: 100%;
+}
+
+.inputs {
+  margin-top: 24px;
+  flex: 0 0 auto;
+}
+
+.inputContainer {
+  margin: 0 40px 6px;
+  align-items: stretch;
+  border: 0 solid black;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 0;
+  position: relative;
+}
+
+.inputPlaceHolder {
+  color: rgba(142, 142, 142, 1);
+  font-size: 12px;
+  height: 36px;
+  left: 8px;
+  line-height: 36px;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  text-overflow: ellipsis;
+  transform-origin: left;
+}
+
+.inputInner {
+  align-items: center;
+  background: rgba(var(--bg-default), 0);
+  border: 1px solid rgba(219, 219, 219, 1);
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: rgba(38, 38, 38, 1);
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  font-size: 14px;
+  position: relative;
+  width: 100%;
+}
+
+label {
+  flex: flex;
+  flex: 1 0 0;
+  height: 36px;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+  position: relative;
+}
+
+input {
+  outline: none;
+  font-size: 16px;
+  background: rgba(var(--bg-default), 1)
+  border: 0;
+  flex: 1 0 auto;
+  margin: 0;
+  outline: 0;
+  overflow: hidden;
+  padding: 9px 0 7px 8px;
+  text-overflow: ellipsis;
+  color: rgba(var(--dark-color), 1);
+  line-height: 18px;
+  display: inline-block;
+  width: 100%;
+  border: none;
+}
+
+.loginButtonContainer {
+  margin-top: 8px;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 8px;
+  flex: 0 0 auto;
+  align-items: stretch;
+  align-content: stretch;
+  display: flex;
+}
+
+.loginButton {
+  align-items: flex-start;
+  background-color: rgba(0, 149, 246, 1);
+  color: rgba(255, 255, 255, 1);
+  border: 1px solid transparent;
+  opacity: 1;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  padding 5px 9px;
+}
+
+.loginButtonInner {
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  align-items: stretch;
+  display: flex;
+}
+
+.divider {
+  margin: 10px 40px 18px;
+  flex-direction: row;
+  align-items: stretch;
+  display: flex;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+.divLine {
+  background-color: rgba(219,219,219,1);
+  height: 1px;
+  position: relative;
+  top: 0.45em;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.fbLoginContainer {
+  margin-top: 8px;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 8px;
+  justify-content: flex-start;
+  align-items: stretch;
+  display: flex
+}
+
+.fbLoginButton {
+  border: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  background: 0 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.fbIcon {
+  background-position: -414px -259px;
+  display: inline-block;
+  margin-right: 8px;
+  height: 16px;
+  width: 16px;
+}
+
+.forgetPassword {
+  color: rgba(0, 55, 107, 1);
+  font-size: 12px;
+  margin-top: 12px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footerItemContainer {
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: center;
+}
+
+.footerItem {
+  margin: 0px 8px 12px 8px;
+  color: rgb(142, 142, 142);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.spriteHeadline {
+  background-repeat: no-repeat;
+  background-position: 0 -130px;
+  height: 51px;
+  width: 175px;
+  text-overflow: ellipsis;
+  text-transform: inherit;
+  line-height: 18px;
+}
+
+.sprite {
+  background-image: url(images/sprite.png);
 }
