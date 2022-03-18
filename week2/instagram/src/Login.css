@@ -1,0 +1,157 @@
+.App {
+    text-align: center;
+  }
+  
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  .login-container{
+    display: block flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: solid lightgrey 1px;
+  }
+  
+  .App-logo{
+    width: 180px;
+    height: 100px;
+    padding-top:5px;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    margin-left: 86px;
+    margin-right: 86px;
+  }
+  
+  .login-item {
+    width: 250px;
+    height: 30px;
+    font-size:13px;
+    margin:5px 20px 5px 20px;
+  }
+  
+  .form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-item{
+    width: 250px;
+    height: 30px;
+    padding: 10px;
+    font-size:12px;
+    margin:5px;
+    border: lightgrey solid 1px;
+  }
+  
+  .orbox{
+    width:250px;
+    margin:5px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    font-size:13px;
+  }
+  
+  hr{
+    width: 40%;
+    height: 1px;
+    border: 0.5px;
+    background-color: lightgrey;
+  }
+  
+  .icon{
+    width:17px;
+    height: 17px;
+    margin-bottom: 5px;
+  }
+  
+  .facebook-color{
+    color: #385185;
+  }
+  
+  .textbox{
+    font-size:12px;
+  }
+  
+  .sign-up-box{
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: solid 1px lightgrey;
+    padding-top: 10px;
+    font-size: 13px;
+  }
+  
+  .download-icon{
+    width: 130px;
+    height: 45px;
+  }
+  
+  .footer-icon{
+    margin-left: 15px;
+    margin-right: 15px;
+    color: grey;
+    font-size: 12px;
+  }
+  
+  select{
+    border: 0px;
+    color: grey;
+  }
+  
+  .loginpage-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 60px;
+  }
+  
+  .image-box{
+    position: relative;
+    width: 360px;
+    height: 530px;
+  
+  }
+  
+  .front{
+    position: absolute;
+    width:300px;
+    height:470px;
+    top:20px;
+    right:20px;
+  }
+  
+  .back{
+    position: absolute;
+    top:0;
+    left:0;
+    width:300px;
+    height:470px;
+  }
