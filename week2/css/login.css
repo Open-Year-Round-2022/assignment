@@ -41,23 +41,23 @@ body{
     border: 1px solid rgba(0,0,0,0.2);
 }
 form{
-    padding:15px 20px;
+    padding:35px 20px 20px 20px;
 }
 input{
-    padding: 10px;
+    padding: 13px 10px;
     border:1px solid rgba(0,0,0,0.2);
     border-radius :2px;
     background-color:rgba(var(--b3f,250,250,250),1);
     width : 245px;
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom : 8px;
 }
 button{
     color : white;
     background-color : #0080FF;
-    width : 265px;
+    width : 261px;
     padding : 7px 0px;
-    margin-bottom : 20px;
+    margin : 7px 0px 20px 0px;
     font-weight: bold;
     border-style: none;
     border-radius :2px;
@@ -94,8 +94,8 @@ form a{
 /*login-container의 signup-container*/
 .signup-container{
     width:348px;
-    font-size : small;
-    padding : 15px 0px;
+    font-size : 14px;
+    padding : 25px 0px;
     margin-top : 10px;
 }
 .signup-container a{
@@ -106,7 +106,7 @@ form a{
 }
 /*login-container의 download-container*/
 .download-container p{
-    font-size :small;
+    font-size :14px;
 }
 .download-container img{
     width : 130px;
