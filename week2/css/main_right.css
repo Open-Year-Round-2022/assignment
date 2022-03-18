@@ -1,0 +1,129 @@
+footer{
+  width:100%;
+  margin:20px 0 0 0;
+  text-align:left;
+}
+footer>div{
+  width:100%;
+}
+
+#fixed-container{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  position:fixed;
+}
+
+#myprofile-friend-container{
+  display:flex;
+  flex-direction:column;
+  width:250px;
+  margin:32px 0 0 20px;
+}
+
+#myprofile{
+  display:flex;
+  position:relative;
+  height:50px;
+  width:250px;
+}
+
+#profile-image{
+  float:left;
+  width:50px;
+  margin-right:5px;
+  border-radius:70%;
+}
+
+#profile-info{
+  display:flex;
+  width:50%;
+  margin:auto 0;
+  padding:0;
+  flex-direction:column;
+  font-size:12px;
+}
+
+#profile-nickname{
+  display:inline-block;
+  width:80px;
+}
+#profile-name{
+  display:inline-block;
+  width:80px;
+}
+
+#profile-change{
+  width:50%;
+  margin:auto 0;
+  text-align:right;
+  font-size:10px;
+  font-weight:600;
+  color:rgb(0, 140, 255);;
+}
+
+
+#friend-container{
+  width:250px;
+}
+#friend-title{
+  /*왜 flex 넣어야 옆으로 딱 맞아지는거지..*/
+  display:flex;
+  margin:10px 0 0 0;
+  width:250px;
+}
+#friend-title-left{
+  display:inline-block;
+  box-sizing:border-box;
+  width:50%;
+  font-size:11px;
+  color:gray;
+}
+#friend-title-right{
+  display:inline-block;
+  box-sizing:border-box;
+  width:50%;
+  text-align:right;
+  font-size:9px;
+  font-weight:600;
+}
+
+.friend{
+  display:flex;
+  width:100%;
+  margin:9px 0 0 0;
+  
+}
+.friend-profile{
+  float:left;
+  width:30px;
+  height:30px;
+  border-radius:70%;
+}
+
+.friend-info{
+  display:flex;
+  width:50%;
+  padding:0 0 0 10px;
+  flex-direction:column;
+}
+
+.friend-nickname{
+  margin:0 0 5px 0;
+  font-size:10px;
+  font-weight:600;
+}
+.friend-state{
+  font-size:8px;
+  color:rgba(128, 128, 128, 0.808);
+}
+
+.friend-follow{
+  display:inline-block;
+  width:50%;
+  margin:auto 0;
+  text-align:right;
+  color:rgb(0, 140, 255);
+  font-size:10px;
+  font-weight:600;
+}

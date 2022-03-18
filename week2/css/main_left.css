@@ -1,0 +1,158 @@
+#left{
+  position:relative;
+}
+#story-container{
+  display:flex;
+  position:absolute;
+  top:0;
+  right:0;
+  width:450px;
+  height:90px;
+  margin:2% 0 1% 0;
+}
+.post-dots3{
+  right:0;
+}
+
+.story{
+  box-sizing:border-box;
+  width:60px;
+  margin: 12px 5px 0px 10px;
+}
+
+#post-container{
+  display:flex;
+  position:absolute;
+  width:450px;
+  
+  top:120px;
+  right:0;
+  flex-direction:column;
+}
+  
+.post{
+  width:450px;
+  height:600px;
+  margin: 2% 0 2% 0;
+}
+
+.left-story{
+  position:relative;
+}
+.story-profile{
+  position:absolute; 
+  width:45px;
+  left:2.5px;
+  top:3px;
+  border-radius:70%;
+}
+.story-template{
+  position:absolute;
+  width:50px;
+}
+
+.story-nickname{
+  position:absolute;
+  top:50px;
+  font-size:10px;
+  font-weight:100;
+  
+}
+
+.post-title{
+  display:flex;
+  position:relative;
+  width:100%;
+  height:50px;
+}
+
+.post-profile{
+  display:inline-block;
+  margin:auto 10px;
+  height:30px;
+  border-radius:70%;
+}
+.post-nickname{
+  display:inline-block;
+  margin:auto 0;
+  font-size:10px;
+}
+.post-more{
+  display:inline-block;
+  position:absolute;
+  right:5px;
+  top:10px;
+  width:30px;
+  height:30px;
+  margin:auto 0;
+
+}
+
+.post-image{
+  width:100%;
+}
+
+.post-icon-container{
+  box-sizing:border-box;
+  width:100%;
+  padding:0 10px;
+}
+
+
+.post-icon{
+  width:20px;
+}
+
+.post-icon:hover{
+  opacity:0.5;
+}
+
+.post-like{
+  width:100%;
+  box-sizing:border-box;
+  padding:0 10px;
+  font-size:12px;
+}
+
+.post-content{
+  width:100%;
+  height:100px;
+  box-sizing:border-box;
+  padding:0 10px;
+  font-size:10px;
+}
+
+.post-icon-heart{
+  display:inline-block;
+  width:20px;
+  height:20px;
+  background-image:url(../image/heart.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.clicked-heart-icon{
+  display:inline-block;
+  width:20px;
+  height:20px;
+  background-image:url(../image/heart-clicked.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.post-icon-store{
+  width:20px;
+  height:20px;
+  background-image:url(../image/post_store_icon.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  float:right;
+}
+.post-icon-store-clicked{
+  width:20px;
+  height:20px;
+  background-image:url(../image/post_store_icon_clicked.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  float:right;
+}

@@ -1,0 +1,111 @@
+#right-login{
+  width:290px;
+  top:0;
+  padding:10% 5%;
+  margin:0% 5% 3% 5%;
+
+}
+#right-signup{
+  width:290px;
+  font-size:10px;
+  margin:0% 5%;
+  padding:5% 5%;
+}
+
+#right-download{
+  box-sizing:border-box;
+  width:290px;
+  font-size:10px;
+  margin:5% 5%;
+  padding:0% 5%;
+}
+
+#insta-logo{
+  width:150px;
+}
+
+#right-facebook-logo{
+  width:12px;
+}
+#right-facebook-link{
+  font-size:10px;
+}
+#right-findpassword-link{
+  font-size:10px;
+}
+
+#signup-link{
+  color:blue;  
+}
+
+#login-button{
+  width:85%;
+  margin:4px;
+  border:none;
+  border-radius:2px;
+  background-color:rgb(42, 124, 248);
+  color:white;
+}
+
+#right-line{
+  display: flex; 
+  flex-basis: 100%; 
+  margin: 8px 0px;
+  align-items: center; 
+  color: rgba(0, 0, 0, 0.45); 
+  font-size: 10px; 
+}
+
+#right-line::before,#right-line::after{
+  content: ""; 
+  height: 0.1px; 
+  margin: 0px 16px;
+  flex-grow: 1; 
+  background: rgba(0, 0, 0, 0.35); 
+  font-size: 0px; 
+  line-height: 0px; 
+}
+#phone-image-container{
+  display:inline-block;
+  position:relative;
+  box-sizing:border-box;
+  width:100%;
+  
+}
+
+#phone-image{
+  position:absolute;
+  top:0;
+  right:0;
+  width:380px;
+  margin:0;
+  padding:0;  
+}
+
+#phone-screen-image{
+  position:absolute;
+  top:18px;
+  right:46px;
+  width:208px;
+}
+
+.login-input{
+  box-sizing:border-box;
+  width:85%;
+  padding:2px;
+  margin:2px;
+  background-color:rgba(0, 0, 0, 0.02);
+  border:1px solid rgba(0, 0, 0, 0.15);
+  border-radius:2px;
+}
+
+.login-input::placeholder{
+  font-size:8px;
+}
+
+.download-button{
+  width:105px;
+}
+.footer-link{
+  margin:1%;
+}
