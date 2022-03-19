@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "insta_font";
+  src: url("./billabong.otf");
+}
+body {
+  background-color: #fafafa;
+}
+.mainComponent {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 7em;
+  padding-bottom: 100px;
+}
+.imagConponent {
+  margin-right: 15px;
+}
+.accountConponent {
+  width: 348px;
+  height: 360px;
+  margin-left: 15px;
+  margin-top: 25px;
+  text-align: center;
+}
+.logInConponent {
+  width: 348px;
+  height: 360px;
+  text-align: center;
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  background-color: rgba(var(--d87, 255, 255, 255), 1);
+}
+.signinConponent h1 {
+  font-family: "insta_font";
+  font-size: 51px;
+  margin-top: 22px;
+  margin-bottom: 12px;
+}
+.signupConponent {
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputZone {
+  text-align: center;
+  padding-top: 10px;
+}
+.inputZone input {
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  font-size: 12px;
+  padding: 9px 0 7px 8px;
+  background: rgba(var(--b3f, 250, 250, 250), 1);
+  margin-bottom: 5px;
+  border-radius: 3%;
+  width: 266px;
+}
+.inputZone input:focus {
+  outline: none;
+}
+.loginButton {
+  width: 276px;
+  height: 30px;
+  background-color: #0095f6;
+  margin: auto;
+  border-radius: 3%;
+  padding-top: 7px;
+  margin-top: 10px;
+}
+.loginButton p {
+  color: rgba(var(--d87, 255, 255, 255), 1);
+  margin: 0px;
+}
+.crossBlock {
+  display: flex;
+  width: 276px;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+.crossLine {
+  height: 0px;
+  width: 103px;
+  border-top: 0.5px solid #dbdbdb;
+}
+.onLineP {
+  color: #8e8e8e;
+}
+.anchorSignup {
+  color: rgba(var(--d69, 0, 149, 246), 1);
+  text-decoration-line: none;
+}
+.isForgetPassword {
+  color: rgba(var(--fe0, 0, 55, 107), 1);
+  font-size: 12px;
+  margin-top: 20px;
+}
+.loginByPassword {
+  margin-left: 8px;
+  color: #385185;
+}
+footer {
+  font-size: 12px;
+  color: #8e8e8e;
+}
+.infoLine {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.infoLine li {
+  list-style: none;
+  padding-left: 1.5em;
+}
+.thirdLine {
+  display: flex;
+  justify-content: center;
+}
+.thirdLine li {
+  list-style: none;
+  padding: 1em;
+  padding-top: 0.5em;
+}

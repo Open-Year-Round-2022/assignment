@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>Instagram</title>
+</head>
+<body>
+    <header>
+        <div class="headerBar">
+            <div class="Logo">
+                <a href="index.html"><img src="./images/instagramlogo.png"></a>
+            </div>
+
+            <div class="Search">
+                <input type="text" placeholder="검색">
+            </div>
+
+            <nav>
+                <ul class="headerNav">
+                    <li><img src="./images/nav0.png"></li>
+                    <li><img src="./images/nav1.png"></li>
+                    <li><img src="./images/nav2.png"></li>
+                    <li><img src="./images/nav3.png"></li>
+                    <li><img src="./images/nav4.png"></li>
+                    <li><img src="./images/UserIcon.png"></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="mainBoard">
+            <div class="leftBoard">
+                <div class="storyBoard">
+                    <div class="story">
+                        <img src="./images/peaches.png">
+                        <p class="storyName">Peaches.Uni</p>
+                    </div>
+                </div>
+                <div class="postingBoard">
+
+                    <div class="pb_header">
+                        <div class="userInfo">
+                            <img src="./images/peaches.png">
+                            <p class="userName"><strong>Peaches.Uni</strong></p>
+                        </div>
+                        <img class="pb_menu" onclick="openMenu('pb_menu')" src="./images/menu.png">
+                    </div>
+
+                    <div class="imageZone">
+                        <img src="./images/peachesJacket.png">
+                    </div>
+
+                    <div class="pb_footer">
+                        <div class="pb_f_header">
+                            <ul>
+                                <li><img id="0" src="./images/pb0.png" onclick="clickLi(0)" onmouseover="this.src='./images/main11.png'" onmouseout="this.src='./images/pb0.png'"></li>
+                                <li><img class="viewPosting" onclick="openMenu('viewPosting')" src="./images/pb1.png" onmouseover="this.src='./images/main2.png'" onmouseout="this.src='./images/pb1.png'"></li>
+                                <li><img src="./images/pb2.png" onmouseover="this.src='./images/main3.png'" onmouseout="this.src='./images/pb2.png'"></li>
+
+                            </ul>
+                            <img id="3" onclick="clickLi(3)" src="./images/pb3.png" onmouseover="this.src='./images/main4.png'" onmouseout="this.src='./images/pb3.png'">
+                        </div>
+                        <div class="pb_f_main">
+                            <p class="userName"><strong>Peaches.Uni</strong></p>
+                            <p>New 2022 S/S edition</p>
+                        </div>
+
+                        <div class="pb_f_footer">
+                            <img src="./images/faceEmg.png">
+                            <input placeholder="댓글 달기...">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="rightBoard">
+                <div class="accountCompo">
+                    <div class="accountInfo">
+                        <img src="./images/peaches.png">
+                        <div class="nameID">
+                            <p class="userName">dongukisfree</p>
+                            <p class="coment">김동욱</p>
+                        </div>
+                    </div>
+                    <p class="buttonP">전환</p>
+
+                </div>
+                <div class="friendsRecomCompo">
+                    <div class="recommendationForMe">
+                        <p>회원님을 위한 추천</p>
+                        <p id="viewAll">모두 보기</p>
+                    </div>
+                    <div class="recommendedPeople">
+                        <div class="peopleInfo">
+                            <img src="./images/noneicon.png">
+                            <div class="nameID">
+                                <p class="userName">Peaches</p>
+                                <p class="rcoment">Dowon님이 팔로우합니다.</p>
+                            </div>
+                        </div>
+                        <p class="buttonP">팔로우</p>
+                    </div>
+                </div>
+                <div class="licenseCompo">
+
+                    <nav>
+                        <ul>
+                            <li>소개</li>
+                            <li>도움말</li>
+                            <li>홍보센터</li>
+                            <li>API</li>
+                            <li>채용 정보</li>
+                            <li>개인정보처리방침</li>
+                            <li>약관</li>
+                            <li>위치</li>
+                            <li>인기계정</li>
+                            <li>해쉬태그</li>
+                            <li>언어</li>
+                        </ul>
+                    </nav>
+                    <p>&copy 2022 INSTAGRAM FROM META</p>
+                </div>
+            </div>  
+        </div>
+    </main>
+
+    <div class="menuModal hidden" onclick="closeMenu('menuModal')">
+        <div class="modelBox">
+            <div class="mb_option mb_red"><p>신고</p></div>
+            <div class="mb_option mb_red"><p>팔로우 취소</p></div>
+            <div class="mb_option"><p>게시물로 이동</p></div>
+            <div class="mb_option"><p>태그된 계정</p></div>
+            <div class="mb_option"><p>공유 대상</p></div>
+            <div class="mb_option"><p>링크 복사</p></div>
+            <div class="mb_option"><p>퍼가기</p></div>
+            <div class="mb_option"><p>취소</p></div>
+
+        </div>
+    </div>
+
+    <div class="commentModal hidden" onclick="closeMenu('commentModal')">
+        <div class="postingView">
+            <div class="pv_Photo">
+                <img src="./images/peachesJacket.png">
+            </div>
+            <div class="pv_Describe">
+                <div class="pv_userCompo">
+                    <div class="userInfo">
+                        <img src="./images/peaches.png">
+                        <p class="userName"><strong>Peaches.Uni</strong></p>
+                    </div>
+                    <img class="pb_menu" onclick="openMenu('pb_menu')" src="./images/menu.png">
+                </div>
+
+                <div class="pv_textCompo">
+                    <div class="userInfo">
+                        <img src="./images/peaches.png">
+                        <p class="userName"><strong>Peaches.Uni</strong></p>
+                    </div>
+                    <div class="pv_context">
+                        <p>Peaches. Spring / Summer Tees & Fleece</p>
+                        <p>More Info Coming Soon.</p>
+                        <p>Releasing Offline: @peaches_d8ne<br>
+                            3/19/2022 Sat.; 11 A.M. KST</p>
+                    </div>
+                </div>
+
+                
+                <div class="commentZone">
+                    <div class="comment">
+                        <div class="userInfo">
+                            <img src="./images/noneicon.png">
+                            <p class="userName"><strong>Cola.12.1</strong></p>
+                        </div>
+                        <div class="co_context"><p>Let's go!!!!</p></div>
+                    </div>
+                </div>
+
+                <div class="commentZone">
+                    <div class="comment">
+                        <div class="userInfo">
+                            <img src="./images/noneicon.png">
+                            <p class="userName"><strong>starlight.do8</strong></p>
+                        </div>
+                        <div class="co_context"><p>드랍드랍~~</p></div>
+                    </div>
+                </div>
+
+                <div class="pv_footer">
+                    <div class="pb_f_header">
+                        <ul>
+                            <li><img id="0" src="./images/pb0.png" onclick="clickLi(0)" onmouseover="this.src='./images/main11.png'" onmouseout="this.src='./images/pb0.png'"></li>
+                            <li><img src="./images/pb1.png" onmouseover="this.src='./images/main2.png'" onmouseout="this.src='./images/pb1.png'"></li>
+                            <li><img src="./images/pb2.png" onmouseover="this.src='./images/main3.png'" onmouseout="this.src='./images/pb2.png'"></li>
+    
+                        </ul>
+                        <img id="3" onclick="clickLi(3)" src="./images/pb3.png" onmouseover="this.src='./images/main4.png'" onmouseout="this.src='./images/pb3.png'">
+                    </div>
+
+                    <div class="pv_w_Comment">
+                        <img src="./images/faceEmg.png">
+                        <input placeholder="댓글 달기...">
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="cancelBtn" onclick="closeMenu('commentModal')">
+                <img src="./images/cancel.png">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Instagram</title>
+</head>
+<body>
+    <div class="mainComponent">
+
+        <div class="imagConponent">
+            <img src="instagramPhone.png">
+        </div>
+
+        <div class="accountConponent">
+
+            <div class="logInConponent">
+
+                <div class="signinConponent">
+                    <h1>Instagram</h1>
+
+                    <div class="inputZone">
+                        <input id="ID" placeholder="전화번호,사용자 이름 또는 이메일">
+                        <input id="password" placeholder="비밀번호">
+                    </div>
+
+                </div>
+
+                <div class="loginButton" onclick="sendUserInfo(1)">
+                    <p id="lgBtn"><strong>로그인</strong></p>
+                </div>
+                <div class="crossBlock">
+                    <div class="crossLine"></div>
+                    <p class="onLineP">또는</p>
+                    <div class="crossLine"></div>
+                </div>
+                <div class="forgetConponent">
+                    <div class="facebook">
+                        <img src="./facebooklogo.png" width="16px" height="16px">
+                        <p class="loginByPassword"><strong><a herf="index.html">Facebook으로 로그인</a></strong></p>
+                    </div>
+                    <p class="isForgetPassword"><a>비밀번호를 잊으셨나요?</a></p>
+                </div>
+
+            </div>
+
+            <div class = "signupConponent">
+                <p>계정이 없으신가요? <strong><a class="anchorSignup"href="index.html">가입하기</a></strong></p>
+            </div>
+
+            <div class= "downloadApp">
+                <p>앱을 다운로드하세요.</p>
+                <img src="./앱다운로드.png"/>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <ul class="infoLine">
+            <li>Meta</li>
+            <li>소개</li>
+            <li>블로그</li>
+            <li>채용정보</li>
+            <li>도움말</li>
+            <li>API</li>
+            <li>개인정보처리방침</li>
+            <li>약관</li>
+            <li>인기 계정</li>
+            <li>해시태그</li>
+            <li>위치</li>
+        </ul>
+        <ul class="infoLine">
+            <li>댄스</li>
+            <li>식음료</li>
+            <li>집 및 정원</li>
+            <li>음악</li>
+            <li>시각 예술</li>
+        </ul>
+        <ul class="thirdLine">
+            <li>한국어</li>
+            <li>2022 Instagram from Meta</li>
+        </ul>
+    </footer>
+</body>
+</html>
