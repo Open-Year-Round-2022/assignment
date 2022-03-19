@@ -1,11 +1,17 @@
+@media screen and (max-width: 980px){
+    aside{
+        display: none;
+    }
+}
+
 body{
     background: #fafafa;
 }
 
 #header{
     width: 100%; /* 공중에 뜨기위해 */
-    position: absolute; /* 가장 위에 올라가 있어야 하기 위해 */
-    z-index: 999;
+	position: sticky;
+    z-index: 1;
     left: 0; top: 0;
     background: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -123,15 +129,10 @@ body{
 	height: 23px;
 }
 
-.sprite_empty_hart_icon img{
+.sprite_empty_hart_icon{
+	background: url('../images/background01.png') no-repeat -52px -261px;
 	width: 24px;
 	height: 22px;
-}
-
-.sprite_empty_hart_icon img:hover{
-	width: 24px;
-	height: 22px;
-	background-color: #8e8e8e;
 }
 
 .sprite_empty_human_icon {
@@ -146,19 +147,6 @@ body{
 	height: 3px;
 }
 
-.bubble_btn div:hover {
-	background: url('../images/background01.png') no-repeat -239px -202px;
-	width: 24px;
-	height: 24px;
-}
-
-.sprite_bubble_icon{
-	background: url('../images/comment.png');
-	width: 24px;
-	height: 24px;
-	background-size: contain;
-}
-
 .sprite_share_icon {
 	background: url('../images/background01.png') no-repeat -324px -52px;
 	width: 21px;
@@ -171,22 +159,38 @@ body{
 	height: 24px;
 }
 
-.sprite_small_heart_icon_outline{
-	background: url('../images/background01.png') no-repeat -323px -274px;
-	width: 12px;
-	height: 11px;
-}
-
-.paper_airplane_btn div:hover{
-	background: url('../images/background01.png') no-repeat -156px -235px;
-	width: 24px;
-	height: 21px;
-}
-
 .sprite_paper_airpalne{
 	background: url('../images/background02.png') no-repeat -79px -401px;
 	width: 22px;
 	height: 20px;
+}
+
+.left_icons div img:hover{
+	opacity: 0.4;
+}
+
+.feed_bottom_icons .right_icon img{
+	width: 26px;
+	height: 26px;
+}
+
+.feed_bottom_icons .right_icon img:hover{
+	opacity: 0.4;
+}
+
+.hart_icon img{
+	width: 32px;
+	height: 32px;
+}
+
+.bubble_icon img{
+	width: 32px;
+	height: 32px;
+}
+
+.airplane_icon img{
+	width: 32px;
+	height: 32px;
 }
 
 article{
@@ -202,11 +206,14 @@ article{
 	border: 1px solid #dbdbdb;
 	border-radius: 3px;
 	background: white;
+	display: flex;
 }
 
 .sub_story img {
-	width: 60px;
-	height: 60px;
+	width: 58px;
+	height: 58px;
+	margin-bottom: 7px;
+	margin-left: 3px;
 	border-radius: 50%;
 	background-color: white;
 }
@@ -216,14 +223,21 @@ article{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	width: 66px;
-	height: 66px;
+	width: 65px;
+	height: 65px;
 	background-image: url('../images/rainbow.png');
 	background-size: contain;
 }
 
+.sub_story div{
+	justify-content: center;
+	align-items: center;
+}
+
 .story_userId {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	top: 11px;
 	font-size: 12px;
 }
@@ -240,6 +254,7 @@ article{
 	display: flex;
 	flex-direction: row;
 	float: left;
+	margin-right: 20px;
 }
 
 .empty_box{
@@ -247,7 +262,7 @@ article{
 }
 
 #main_container {
-	padding-top: 110px;
+	padding-top: 30px;
 	display: flex;
 	justify-content: center;
 }
@@ -265,27 +280,28 @@ article{
 	background: white;
 }
 
-.contents .top{
+.top{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 20px;
 }
 
-.contents .top .profile_img{
+.profile_img{
 	width: 35px;
 	height: 35px;
 	border-radius: 50%;
 	overflow: hidden;
-	margin-right: 10px;
+	margin-right: 15px;
 }
 
-.contents .top .profile_img img{
+.profile_img img{
 	width: 100%;
 }
 
-.contents .top .user_container{
+.user_container{
 	display: flex; /* 가로배치 */
+	flex-direction: row;
 }
 
 .userId{
@@ -306,22 +322,23 @@ article{
 	width: 100%;
 }
 
-.contents .feed_bottom_icons{
+.feed_bottom_icons{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px 20px;
+	padding: 8px 16px 8px 16px;
 }
 
-.contents .feed_bottom_icons .left_icons{
+.feed_bottom_icons .left_icons{
 	display: flex;
 }
 
-.contents .feed_bottom_icons .left_icons > div{
-	margin: 10px;
+.feed_bottom_icons .left_icons div{
+	width: 40px;
+	height: 40px;
 }
 
-.contents .likes{
+.likes{
 	display: flex;
 	font-size: 14px;
 	font-weight: bold;
@@ -329,28 +346,28 @@ article{
 	color: #262626;
 }
 
-.contents .likes #count{
+.likes #count{
 	margin-left: 4px;
 	margin-right: 1px;
 }
 
-.contents .comment_container .comment{
+.comment_container .comment{
 	display: flex;
 	font-size: 14px;
 }
 
-.contents .comment_container{
+.comment_container{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 5px 20px;
 }
 
-.contents .comment_container .comment .userId{
+.comment_container .comment .userId{
 	margin-right: 10px;
 }
 
-.contents .timer{
+.timer{
 	font-size: 10px;
 	letter-spacing: 0.2px;
 	color: #999;
@@ -358,17 +375,33 @@ article{
 	padding: 10px 20px;
 }
 
-.contents .comment_container .comment .userId{
+.comment_container .comment .userId{
 	margin-right: 10px;
 }
 
-.contents .comment_field{
-	min-height: 56px;
+.comment_field{
+	display: flex;
+	flex-direction: row;
+	height: 56px;
 	padding: 0 20px;
 	position: relative;
 }
 
-.contents .comment_field input{
+.smile_icon{
+	height: 32px;
+	margin-right: 10px;
+}
+
+.contents_box .smile_icon{
+	margin-top: 10px;
+}
+
+.smile_icon img{
+	width: 32px;
+	height: 32px;
+}
+
+.comment_field input{
 	width: 100%;
 	height: 56px;
 	border: none;
@@ -376,16 +409,15 @@ article{
 	background: transparent;
 }
 
-.contents .comment_field input:focus ~ .upload_btn{
+.comment_field input:focus ~ .upload_btn{
 	pointer-events: initial;
 	opacity: 1;
 }
 
-.contents .comment_field .upload_btn{
+.comment_field .upload_btn{
 	color: #3897f0;
 	position: absolute;
 	right: 20px;
-	top: 20px;
 	top: 20px;
 	top: 50%;
 	transform: translateY(-50%);
@@ -402,8 +434,9 @@ aside{
 
 .side_box{
 	position: sticky;
+	top: 94px;
+	bottom: -125px;
 	width: 293px;
-	top: 0px;
 	right: 720px;
 }
 
@@ -491,23 +524,17 @@ aside{
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
-	padding-top: 8px;
 }
 
 .user_profile_id_box{
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
 	width: 201px;
+	display: flex;
+	flex-direction: column;
 }
 
 .user_profile_box{
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 40px;
 	height: 55px;
-	flex-direction: column;
 }
 
 .user_profile_box img{
@@ -516,17 +543,20 @@ aside{
 	border-radius: 50%;
 }
 
-.user{
+.friend_container{
+	display: flex;
+	flex-direction: column;
+	padding: 16px 8px 16px 8px;
+}
+
+.friend{
 	display: flex;
 	flex-direction: row;
-	height: 48px;
-	padding: 16px 8px 16px 8px;
 }
 
 .follow {
 	font-size: 12px;
 	color: #0095f6;
-	align-items: center;
 	margin-left: 12px;
 }
 
@@ -557,4 +587,8 @@ aside{
 	font-size: 12px;
 	color: #c7c7c7;
 	float: left;
+}
+
+.feed_bottom_icons img{
+    cursor: pointer;
 }
