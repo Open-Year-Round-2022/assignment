@@ -346,11 +346,6 @@ article{
 	color: #262626;
 }
 
-.likes #count{
-	margin-left: 4px;
-	margin-right: 1px;
-}
-
 .comment_container .comment{
 	display: flex;
 	font-size: 14px;
