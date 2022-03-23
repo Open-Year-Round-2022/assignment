@@ -1,5 +1,5 @@
-const bookmark_img = document.getElementsByClassName("bookmark_img");
-const hart_img = document.getElementsByClassName("hart_img");
+const bookmark_img = document.querySelectorAll(".bookmark_img");
+const hart_img = document.querySelectorAll(".hart_img");
 
 for (let i = 0; i < hart_img.length; i++) {
     hart_img[i].addEventListener('click', (e) => {

@@ -1,7 +1,6 @@
 const bubble_img = document.getElementsByClassName("bubble_img");
 const feed_detail_modal = document.querySelector('.feed_detail_modal');
 const feed_detail_modal_close = document.querySelector('.feed_detail_modal_close');
-const feed_detail_modal_box = document.querySelector('.feed_detail_modal_box');
 const feed_img = document.getElementsByClassName('feed_img');
 const feed_detail_left_img = document.getElementById('feed_detail_left_img');
 const header_top = document.querySelectorAll('.top');

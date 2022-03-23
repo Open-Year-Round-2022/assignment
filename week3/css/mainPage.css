@@ -18,9 +18,10 @@ body{
 }
 
 #header .inner{ /* inner 안에 컨텐츠를 넣으면 안에 값이 들어옴 */
-    width: 975px;
+    width: 935px;
     height: 77px;
     margin: 0 auto; /* 위아래 여백 없이 가로 중앙에 배치되는 서식 */
+	padding: 0 20px 0 20px;
 	display: flex; /* 가로 배치 */
 	justify-content: space-between; /* x축 정렬_공간을 자동으로 분배함 */
 	align-items: center; /* y축 정렬 */
@@ -35,16 +36,9 @@ body{
     display: inline-block;
 }
 
-#header .inner .logo .sprite_write_logo{
-	position: relative; /* after에게 위치 기준을 전달해주기 위해 */
-	margin-right: 30px;
-	left: 20px;
-}
-
-#header .inner .logo .sprite_write_logo::after{
-	position: absolute;
-	right: -15px;
-	top: 0;
+.insta_logo{
+	width: 103px;
+	height: 29px;
 }
 
 #header .search_box{
@@ -71,13 +65,11 @@ body{
 	top: 50%;
 	transform: translate(-50%, -50%);
 	pointer-events: none;
+	display: flex;
+	flex-direction: row;
 }
 
-#header .search_box .fake_field{
-	transform: translate(-110px, -5px);
-}
-
-#search-field:focus~.fake_field > div:nth-child(1){
+#search-field:focus~.fake_field{
 	display: none;
 }
 
@@ -89,80 +81,10 @@ body{
 	position: relative;
 }
 
-#header .inner .right_icons div{
+#header .inner .right_icons img{
 	display: inline-block;
-}
-
-.sprite_write_logo {
-	background: url('../images/background01.png') no-repeat -94px -72px;
-	width: 103px;
-	height: 29px;
-}
-
-.sprite_small_search_icon {
-	background: url('../images/background01.png') no-repeat -337px -246px;
-	width: 10px;
-	height: 10px;
-}
-
-.sprite_black_house_icon {
-	background: url('../images/background01.png') no-repeat -78px -260px;
 	width: 24px;
 	height: 24px;
-}
-
-.sprite_direct_message_icon {
-	background: url('../images/background01.png') no-repeat -156px -235px;
-	width: 24px;
-	height: 21px;
-}
-
-.sprite_new_post_icon {
-	background: url('../images/background01.png') no-repeat -297px -234px;
-	width: 23px;
-	height: 23px;
-}
-
-.sprite_compass_icon {
-	background: url('../images/background01.png') no-repeat -130px -286px;
-	width: 23px;
-	height: 23px;
-}
-
-.sprite_empty_hart_icon{
-	background: url('../images/background01.png') no-repeat -52px -261px;
-	width: 24px;
-	height: 22px;
-}
-
-.sprite_empty_human_icon {
-	background: url('../images/background01.png') no-repeat -272px -182px;
-	width: 22px;
-	height: 24px;
-}
-
-.sprite_more_icon {
-	background: url('../images/background01.png') no-repeat -301px -218px;
-	width: 15px;
-	height: 3px;
-}
-
-.sprite_share_icon {
-	background: url('../images/background01.png') no-repeat -324px -52px;
-	width: 21px;
-	height: 24px;
-}
-
-.sprite_bookmark_icon {
-	background: url('../images/background01.png') no-repeat -237px -286px;
-	width: 19px;
-	height: 24px;
-}
-
-.sprite_paper_airpalne{
-	background: url('../images/background02.png') no-repeat -79px -401px;
-	width: 22px;
-	height: 20px;
 }
 
 .left_icons div img:hover{
@@ -225,7 +147,7 @@ article{
 	flex-direction: column;
 	width: 65px;
 	height: 65px;
-	background-image: url('../images/rainbow.png');
+	background-image: url('/rainbow.png');
 	background-size: contain;
 }
 
@@ -304,6 +226,11 @@ article{
 	flex-direction: row;
 }
 
+.feed_more_bttn img{
+	width: 24px;
+	height: 24px;
+}
+
 .userId{
 	font-size: 14px;
 	font-weight: bold;
@@ -370,8 +297,9 @@ article{
 	padding: 10px 20px;
 }
 
-.comment_container .comment .userId{
-	margin-right: 10px;
+.small_heart img{
+	width: 16px;
+	height: 16px;
 }
 
 .comment_field{

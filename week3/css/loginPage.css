@@ -75,7 +75,7 @@ body{
     font-size: 12px;
 }
 
-.loginBtn{
+.loginBtn input{
     width: 268px;
     height: 30px;
     margin: 8px 40px;
@@ -83,6 +83,18 @@ body{
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.loginBtn input:hover{
+    width: 268px;
+    height: 30px;
+    margin: 8px 40px;
+    background-color: #0095f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .login_perforation{
@@ -110,8 +122,7 @@ body{
     display: flex;
 }
 
-.sprite_facebook_icon {
-	background: url('../images/background01.png') no-repeat -234px -234px;
+.facebook_icon {
 	width: 24px;
 	height: 24px;
 }

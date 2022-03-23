@@ -1,5 +1,5 @@
 const open = document.querySelectorAll('.feed_more_bttn');
-const close = document.querySelector('.feed_more_close');
+const closebttn = document.querySelector('.feed_more_close');
 const layout = document.querySelector('.feed_more_modal_wrapper');
 
 for (let i = 0; i < open.length; i++) {
@@ -8,7 +8,7 @@ for (let i = 0; i < open.length; i++) {
     });
 }
 
-close.addEventListener('click', function () {
+closebttn.addEventListener('click', function () {
     layout.style.display = "none";
 });
 
