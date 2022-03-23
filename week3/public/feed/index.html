@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body>
+    <section style="width: 100%">
+      <nav style="align-items: stretch">
+        <div
+          style="
+            position: fixed;
+            height: 60px;
+            z-index: 3;
+            color: white;
+            flex-basis: 60px;
+            width: 100%;
+            align-items: center;
+            border-bottom: 1px solid rgb(219, 219, 219);
+          "
+        >
+          <div
+            style="
+              max-width: 975px;
+              flex-direction: row;
+              padding: 0 20px;
+              width: 100%;
+              height: 60px;
+              align-items: center;
+            "
+          >
+            <div
+              style="
+                flex: 1 0 127px;
+                justify-content: flex-start;
+                flex-direction: row;
+                align-items: center;
+              "
+            >
+              <div style="height: 36px">
+                <img src="./images/logo.png" style="max-height: 100%" />
+              </div>
+            </div>
+            <div
+              style="
+                border-radius: 8px;
+                flex: 0 1 auto;
+                height: 36px;
+                min-width: 125px;
+                width: 268px;
+                background-color: rgb(239, 239, 239);
+              "
+            >
+              <input
+                placeholder="검색"
+                type="text"
+                style="
+                  font-size: 16px;
+                  background: rgb(239, 239, 239);
+                  padding: 3px 16px;
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 8px;
+                  box-sizing: border-box;
+                  outline: 0;
+                  border: 0;
+                  margin-left: 22px;
+                "
+              />
+              <div style="position: absolute; padding: 10px 16px">
+                <svg
+                  aria-label="검색"
+                  class="_8-yf5"
+                  color="#8e8e8e"
+                  fill="#8e8e8e"
+                  height="16"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="16"
+                >
+                  <path
+                    d="M19 10.5A8.5 8.5 0 1110.5 2a8.5 8.5 0 018.5 8.5z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                  <line
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    x1="16.511"
+                    x2="22"
+                    y1="16.511"
+                    y2="22"
+                  ></line>
+                </svg>
+              </div>
+            </div>
+            <div
+              style="
+                flex: 1 0 127px;
+                justify-content: flex-end;
+                flex-direction: row;
+                align-items: center;
+              "
+            >
+              <div class="navButton">
+                <svg
+                  aria-label="홈"
+                  class="_8-yf5"
+                  color="#262626"
+                  fill="#262626"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M22 23h-6.001a1 1 0 01-1-1v-5.455a2.997 2.997 0 10-5.993 0V22a1 1 0 01-1 1H2a1 1 0 01-1-1V11.543a1.002 1.002 0 01.31-.724l10-9.543a1.001 1.001 0 011.38 0l10 9.543a1.002 1.002 0 01.31.724V22a1 1 0 01-1 1z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="navButton">
+                <svg
+                  aria-label="Direct"
+                  class="_8-yf5"
+                  color="#262626"
+                  fill="#262626"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <line
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    x1="22"
+                    x2="9.218"
+                    y1="3"
+                    y2="10.083"
+                  ></line>
+                  <polygon
+                    fill="none"
+                    points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"
+                    stroke="currentColor"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></polygon>
+                </svg>
+              </div>
+              <div class="navButton">
+                <svg
+                  aria-label="새로운 게시물"
+                  class="_8-yf5"
+                  color="#262626"
+                  fill="#262626"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                  <line
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    x1="6.545"
+                    x2="17.455"
+                    y1="12.001"
+                    y2="12.001"
+                  ></line>
+                  <line
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    x1="12.003"
+                    x2="12.003"
+                    y1="6.545"
+                    y2="17.455"
+                  ></line>
+                </svg>
+              </div>
+              <div class="navButton">
+                <svg
+                  aria-label="사람 찾기"
+                  class="_8-yf5"
+                  color="#262626"
+                  fill="#262626"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <polygon
+                    fill="none"
+                    points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></polygon>
+                  <polygon
+                    fill-rule="evenodd"
+                    points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056"
+                  ></polygon>
+                  <circle
+                    cx="12.001"
+                    cy="12.005"
+                    fill="none"
+                    r="10.5"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></circle>
+                </svg>
+              </div>
+              <div class="navButton">
+                <svg
+                  aria-label="활동 피드"
+                  class="_8-yf5"
+                  color="#262626"
+                  fill="#262626"
+                  height="24"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="navButton circleBorder">
+                <img
+                  alt="kyuuw님의 프로필 사진"
+                  draggable="false"
+                  src="./images/avatar.jpg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main
+        style="
+          background-color: rgb(250, 250, 250);
+          align-items: stretch;
+          flex-shirink: 0;
+        "
+      >
+        <section
+          style="
+            padding-top: 30px;
+            flex-flow: row nowrap;
+            max-width: 935px;
+            width: 100%;
+            margin: 0 auto;
+          "
+        >
+          <div
+            style="
+              float: left;
+              margin-right: 28px;
+              max-width: 614px;
+              width: 100%;
+            "
+          >
+            <div style="padding-bottom: 24px">
+              <div style="height: 50px" />
+            </div>
+            <div>
+              <article class="postArticle">
+                <div class="post">
+                  <div class="postHeaderDiv">
+                    <header class="postHeader">
+                      <div
+                        style="
+                          height: fit-content;
+                          width: fit-content;
+                          cursor: pointer;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                          "
+                        >
+                          <img src="./images/feed_avatar01.jpeg" />
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          margin-left: 14px;
+                          align-items: flex-start;
+                          flex: 1 1 auto;
+                        "
+                      >
+                        <div
+                          style="
+                            color: rgb(38, 38, 38);
+                            font-size: 14px;
+                            font-weight: 600;
+                          "
+                        >
+                          Rsg_seongsu
+                        </div>
+                        <div
+                          style="
+                            color: rgb(142, 142, 142);
+                            font-size: 12px;
+                            font-weight: 400;
+                          "
+                        >
+                          KMPG
+                        </div>
+                      </div>
+                    </header>
+                    <div style="justify-content: center; padding-right: 8px">
+                      <button
+                        style="
+                          align-items: center;
+                          justify-content: center;
+                          border: 0;
+                          background-color: white;
+                        "
+                      >
+                        <div style="height: 24px; width: 24px">
+                          <svg
+                            aria-label="옵션 더 보기"
+                            class="_8-yf5"
+                            color="#262626"
+                            fill="#262626"
+                            height="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            width="24"
+                          >
+                            <circle cx="12" cy="12" r="1.5"></circle>
+                            <circle cx="6" cy="12" r="1.5"></circle>
+                            <circle cx="18" cy="12" r="1.5"></circle>
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div style="background-color: white">
+                    <!-- 사진 -->
+                    <div>
+                      <img
+                        src="./images/feed_image_01_01.jpeg"
+                        style="height: 100%; width: 100%"
+                      />
+                    </div>
+                    <div style="background-color: white; min-width: 355px">
+                      <section class="postButtonSection">
+                        <span>
+                          <div class="postButton" style="margin-left: -8px">
+                            <svg
+                              aria-label="좋아요"
+                              class="_8-yf5"
+                              color="#262626"
+                              fill="#262626"
+                              height="24"
+                              role="img"
+                              viewBox="0 0 24 24"
+                              width="24"
+                            >
+                              <path
+                                d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"
+                              ></path>
+                            </svg>
+                          </div>
+                        </span>
+                        <span>
+                          <div class="postButton">
+                            <svg
+                              aria-label="댓글 달기"
+                              class="_8-yf5"
+                              color="#262626"
+                              fill="#262626"
+                              height="24"
+                              role="img"
+                              viewBox="0 0 24 24"
+                              width="24"
+                            >
+                              <path
+                                d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              ></path>
+                            </svg>
+                          </div>
+                        </span>
+                        <span>
+                          <div class="postButton">
+                            <svg
+                              aria-label="게시물 공유"
+                              class="_8-yf5"
+                              color="#262626"
+                              fill="#262626"
+                              height="24"
+                              role="img"
+                              viewBox="0 0 24 24"
+                              width="24"
+                            >
+                              <line
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                x1="22"
+                                x2="9.218"
+                                y1="3"
+                                y2="10.083"
+                              ></line>
+                              <polygon
+                                fill="none"
+                                points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"
+                                stroke="currentColor"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              ></polygon>
+                            </svg>
+                          </div>
+                        </span>
+                        <span style="margin-left: auto; margin-right: -8px">
+                          <div class="postButton">
+                            <svg
+                              aria-label="저장"
+                              class="_8-yf5"
+                              color="#262626"
+                              fill="#262626"
+                              height="24"
+                              role="img"
+                              viewBox="0 0 24 24"
+                              width="24"
+                            >
+                              <polygon
+                                fill="none"
+                                points="20 21 12 13.44 4 21 4 3 20 3 20 21"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              ></polygon>
+                            </svg>
+                          </div>
+                        </span>
+                      </section>
+                      <section
+                        style="
+                          padding: 0 16px;
+                          margin-bottom: 8px;
+                          flex-direction: row;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 20px;
+                            height: 20px;
+                            margin-right: 4px;
+                            align-content: stretch;
+                            flex: 0 0 auto;
+                          "
+                          class="circleBorder"
+                        >
+                          <img src="./images//like_avatar01.jpeg" />
+                        </div>
+                        <div stlye="flex: 1 1 auto">
+                          <span
+                            ><strong>yu_hi_ho</strong>님
+                            <strong>외 279명</strong>이 좋아합니다</span
+                          >
+                        </div>
+                      </section>
+                      <div style="padding: 0 16px">
+                        <div style="margin-bottom: 4px">
+                          <span
+                            ><strong>hyun.cho.official</strong> 레인조아카데미
+                            아스콘 면적 확장공사를 완료했습니다.</span
+                          >
+                        </div>
+                        <div style="margin-bottom: 4px">
+                          <span style="color: rgb(142, 142, 142)"
+                            >댓글 11개 모두 보기</span
+                          >
+                        </div>
+                        <div
+                          style="
+                            flex-direction: row;
+                            align-items: stretch;
+                            justify-content: flex-start;
+                            margin-bottom: 4px;
+                          "
+                        >
+                          <div
+                            style="
+                              flex-direction: row;
+                              justify-content: flex-start;
+                              flex: 1 1 auto;
+                            "
+                          >
+                            <strong>kasdfas</strong>&nbsp;다들 곧 뵈어여
+                          </div>
+                          <span>
+                            <div style="align-items: stretch; flex: 0 0 auto">
+                              <svg
+                                aria-label="좋아요"
+                                class="_8-yf5"
+                                color="#262626"
+                                fill="#262626"
+                                height="12"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                width="12"
+                              >
+                                <path
+                                  d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"
+                                ></path>
+                              </svg>
+                            </div>
+                          </span>
+                        </div>
+                        <div
+                          style="
+                            flex-direction: row;
+                            align-items: stretch;
+                            justify-content: flex-start;
+                            margin-bottom: 4px;
+                          "
+                        >
+                          <div
+                            style="
+                              flex-direction: row;
+                              justify-content: flex-start;
+                              flex: 1 1 auto;
+                            "
+                          >
+                            <strong>storm_hwj</strong>&nbsp;좋아요!
+                          </div>
+                          <span>
+                            <div style="align-items: stretch; flex: 0 0 auto">
+                              <svg
+                                aria-label="좋아요"
+                                class="_8-yf5"
+                                color="#262626"
+                                fill="#262626"
+                                height="12"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                width="12"
+                              >
+                                <path
+                                  d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"
+                                ></path>
+                              </svg>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        color: rgb(142, 142, 142);
+                        margin-bottom: 16px;
+                        padding: 0 16px;
+                      "
+                    >
+                      7시간&nbsp;전
+                    </div>
+                    <section
+                      style="
+                        border-top: rgb(239, 239, 239);
+                        padding: 6px 16px;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+                      "
+                    >
+                      <div
+                        style="
+                          padding: 8px 16px 8px 0;
+                          flex-direction: row;
+                          align-items: stretch;
+                          flex: 0 0 auto;
+                        "
+                      >
+                        <svg
+                          aria-label="이모티콘"
+                          class="_8-yf5"
+                          color="#262626"
+                          fill="#262626"
+                          height="24"
+                          role="img"
+                          viewBox="0 0 24 24"
+                          width="24"
+                        >
+                          <path
+                            d="M15.83 10.997a1.167 1.167 0 101.167 1.167 1.167 1.167 0 00-1.167-1.167zm-6.5 1.167a1.167 1.167 0 10-1.166 1.167 1.167 1.167 0 001.166-1.167zm5.163 3.24a3.406 3.406 0 01-4.982.007 1 1 0 10-1.557 1.256 5.397 5.397 0 008.09 0 1 1 0 00-1.55-1.263zM12 .503a11.5 11.5 0 1011.5 11.5A11.513 11.513 0 0012 .503zm0 21a9.5 9.5 0 119.5-9.5 9.51 9.51 0 01-9.5 9.5z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <textarea
+                        aria-label="댓글 달기..."
+                        style="flex: 1 1 auto; height: 18px; outline: 0; padding: 0; font-size: 14px; border: none;"
+                      ></textarea>
+                      <div style="flex: 0 0 auto; color: rgb(0, 149, 246")>게시</div>
+                    </section>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div
+            style="
+              position: fixed;
+              top: 94px;
+              height: 100vh;
+              width: 100%;
+              left: 800px;
+            "
+            id="left-main"
+          >
+            <div style="flex-direction: row; justify-content: flex-start;">
+              <div style="width: 56px; height: 56px;" class="circleBorder">
+                <img src="images/avatar.jpg" />
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        </section>
+      </main>
+    </section>
+  </body>
+</html>
