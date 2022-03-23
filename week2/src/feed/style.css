@@ -30,11 +30,27 @@
   align-items: stretch;
 }
 
-.postHeader {
+.postHeaderDiv {
   align-items: center;
   flex-direction: row;
   flex-grow: 1;
   flex-shrink: 1;
+  max-width: 100%;
+  padding: 14px 4px 14px 16px;
+  justify-content: space-between;
+}
+
+.postHeader {
+  align-items: center;
+  flex-direction: row;
+  flex-shrink: 1;
   max-width: calc(100% - 48px);
   padding: 14px 4px 14px 16px;
+  justify-content: space-between;
+}
+
+.postButton {
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
 }
