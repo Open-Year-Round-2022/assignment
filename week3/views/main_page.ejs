@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/main_layout.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/main_left.css">
+  <link rel="stylesheet" href="../css/main_right.css">
+  <link rel="stylesheet" href="../css/more_modal.css">
+  <link rel="stylesheet" href="../css/post_modal.css">
+
+  <title>Instagram</title>
+</head>
+
+<body>
+  <nav id="nav-container" class="box">
+
+    <div id="insta-logo"><img id="insta-logo-image" src="../image/instagram-g51eeadf7f_1280.png"></div>
+    <input type="text" id="input-search" placeholder="검색">
+
+    <div id="icon-box">
+      <img src="../image/home.png" alt="icon1" class="icon">
+      <img src="../image/message.png" alt="icon2" class="icon">
+      <img src="../image/plus.png" alt="icon3" class="icon">
+      <img src="../image/com.png" alt="icon4" class="icon">
+      <img src="../image/heart.png" alt="icon5" class="icon">
+      <img src="../image/my_profile.jpg" alt="icon6" class="icon nav-profile-image">
+    </div>
+  </nav>
+
+  <section id="content">
+    <section id="left">
+      <div id="story-container" class="box"></div>
+      <div id="post-container"></div>
+    </section>
+
+    <section id="right">
+      <div id="fixed-container">
+        <div id="myprofile-friend-container">
+          <div id="myprofile">
+            <img id="profile-image" src="../image/my_profile.jpg">
+            <div id="profile-info">
+              <div id="profile-nickname"><b>min._.jingjing</b></div>
+              <div id="profile-name">김민지</div>
+            </div>
+            <div id="profile-change">전환</div>
+          </div>
+
+          <div id="friend-container">
+            <div id="friend-title">
+              <div id="friend-title-left">회원님을 위한 추천</div>
+              <a id="friend-title-right">모두보기</a>
+            </div>
+            <div id="friend-for-you-container"></div>
+          </div>
+
+          <footer>
+            <div>소개 . 도움말 . 홍보 센터 . API . 채용정보 . </div>
+            <div>개인정보처리방침 . 약관 . 위치 . 인기계정 . 해시태그 . 언어</div>
+            <br>
+            <div>© 2022 INSTAGRAM FROM META</div>
+          </footer>
+
+        </div>
+
+    </section>
+  </section>
+
+
+  <!--모달 창들-->
+  <div id="more-modal-wrapper">
+    <div id="more-modal">
+      <button class="more-modal-button more-modal-button-red"><b>신고</b></button>
+      <hr class="more-modal-hr">
+      <button class="more-modal-button more-modal-button-red"><b>팔로우 취소</b></button>
+      <hr class="more-modal-hr">
+      <button class="more-modal-button">게시물로 이동</button>
+      <hr class="more-modal-hr">
+      <button class="more-modal-button">퍼가기</button>
+      <hr class="more-modal-hr">
+      <button id="more-modal-button-cancel" class="more-modal-button">취소</button>
+    </div>
+  </div>
+
+  <div id="post-modal-wrapper">
+    <img id="post-modal-x" src="../image/x_icon.png">
+    <div id="post-modal">
+      <div id="post-modal-left">
+        <img id="post-modal-image" src="../image/post_image1.jpg">
+      </div>
+      <div id="post-modal-right">
+        <div id="post-modal-profile">
+          <img id="post-modal-profile-image" src="../image/my_profile.jpg">
+          <div id="post-modal-profile-nickname">min._.jingjing</div>
+        </div>
+
+        <div id="post-modal-content-container">
+          <div id="post-modal-profile">
+            <img id="post-modal-profile-image" src="../image/my_profile.jpg">
+            <div id="post-modal-profile-nickname">min._.jingjing</div>
+            <div id="post-modal-content">바다 입니다</div>
+          </div>
+          <div id="post-modal-comment-container">
+            <div class="post-icon-container">
+              <div class="post-icon post-icon-heart"></div>
+              <img class="post-icon post-icon-comment" src="../image/comment_icon.png">
+              <img class="post-icon" src="../image/message.png">
+              <div class="post-icon post-icon-store"></div>
+              <div id="post-modal-like">좋아요 50개</div>
+              <div id="post-modal-time">1분 전</div>
+            </div>
+            <div id="post-modal-comment">
+              <input id="post-modal-comment-input" type="text" placeholder="    댓글 달기...">
+              <button id="post-modal-comment-button">게시</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/story.js"></script>
+    <script src="../js/post.js"></script>
+    <script src="../js/friend.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/click.js"></script>
+</body>
+
+</html>
