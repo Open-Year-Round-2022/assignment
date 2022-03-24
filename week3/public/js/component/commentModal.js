@@ -17,6 +17,17 @@ const postName = document.querySelectorAll(".post-name");
 const postContent = document.querySelectorAll(".post-content-text");
 const postLike = document.querySelectorAll(".post-like");
 const posttime = document.querySelectorAll(".post-time");
+/*
+function modalOpen(){
+    fetch("https://localhost:3000/main/modal",{
+        method:'GET',})
+    .then(res=>res = res.json())
+    .then(res=>{
+        if(res.success){
+            comment.style.display = "flex";
+        }
+    })
+}*/
 
 commentOpen.forEach(element => {
     element.addEventListener("click", function(event){
@@ -33,9 +44,25 @@ commentOpen.forEach(element => {
         modalContent.innerText = postContent[num].innerText;
         modalLike.innerText = postLike[num].innerText;
         modaltime.innerText = posttime[num].innerText;
-        comment.style.display="flex";
+        comment.style.display = "flex";
+        /*
+        fetch("http://localhost:3000/main",{
+            method:'GET',})
+        .then(res=>res = res.json())
+        .then(res=>{
+            console.log(res);
+            console.log(res.success);
+            if(res.success){
+                console.log("들어왔다!!");
+                //comment.style.display = "flex";
+                location.href='https://localhost:3000/main/modal';
+                modalOpen();
+            }
+        });*/
+        
     });
 });
 commentClose.addEventListener("click", function(){
     comment.style.display="none"; 
 });
+

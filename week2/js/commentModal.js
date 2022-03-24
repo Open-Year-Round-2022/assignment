@@ -2,7 +2,7 @@ const comment = document.querySelector(".comment-modal-wrapper");
 const commentOpen = document.querySelectorAll(".comment-modal-open");
 const commentClose = document.querySelector(".comment-modal-close");
 
-// 게시글에 맞는 모달 만들기,, 힘들다,,
+// 힘들다,,
 // comment 아이콘에 id를 줘서 인덱스처럼 사용했음
 const modalImg = document.querySelector(".comment-modal img");
 const modalWriterImg = document.querySelectorAll(".modal-writer-img");
