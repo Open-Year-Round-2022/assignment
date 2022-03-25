@@ -11,16 +11,16 @@ app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
 app.use(compression());
 
-app.post('/instagram/login_process', (req, res) => {
-    res.redirect('/instagram/mainPage');
-})
+// app.post('/instagram/login_process', (req, res) => {
+//     res.redirect('/instagram/mainPage');
+// });
 
 app.get('/instagram/loginPage', (req, res) => {
     // res.send(loginPage.HTML());
     res.sendFile(__dirname + '/html/loginPage.html');
 });
 
-app.get('/instagram/mainPage', (req, res) => {
+app.post('/instagram/mainPage', (req, res) => {
     res.sendFile(__dirname + '/html/mainPage.html');
 });
 
