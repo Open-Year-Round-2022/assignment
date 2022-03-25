@@ -86,6 +86,12 @@ button{
     margin-left : 3px;
     font-weight : bold;
 }
+.login-fail{
+    width : 270px;
+    color :red;
+    font-size : 14px;
+    margin-bottom : 15px;
+}
 form a{
     font-size: small;
     text-decoration-line: none;
