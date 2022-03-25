@@ -6,9 +6,9 @@ const compression = require('compression');
 const fs = require('fs');
 const { response } = require('express');
 
-app.use(express.static(__dirname + '/images'));
-app.use(express.static(__dirname + '/css'));
-app.use(express.static(__dirname + '/js'));
+app.use('/images', express.static(__dirname + '/images'));
+app.use('/css', express.static(__dirname + '/css'));
+app.use('/js', express.static(__dirname + '/js'));
 app.use(compression());
 
 app.post('/instagram/login_process', (req, res) => {
@@ -16,11 +16,12 @@ app.post('/instagram/login_process', (req, res) => {
 })
 
 app.get('/instagram/loginPage', (req, res) => {
-    res.send(loginPage.HTML());
+    // res.send(loginPage.HTML());
+    res.sendFile(__dirname + '/html/loginPage.html');
 });
 
 app.get('/instagram/mainPage', (req, res) => {
-    res.send(mainPage.HTML());
+    res.sendFile(__dirname + '/html/mainPage.html');
 });
 
 app.listen(3000);
