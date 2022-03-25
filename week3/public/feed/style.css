@@ -67,3 +67,39 @@
   justify-content: center;
   padding: 8px;
 }
+
+.recommendedUserContainer {
+  align-items: center;
+  flex-direction: row;
+  max-width: 100%;
+  padding: 8px 8px 8px 8px;
+}
+
+.recommendedUserImage {
+  width: 32px; 
+  height: 32px;
+  margin-right: 12px;
+}
+
+.recommendedUserIdAndDescriptionContainer {
+  align-items: stretch;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.recommendedUserId {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(38, 38, 38);
+}
+
+.recommendedUserDescription {
+  font-size: 12px;
+  color: rgb(142, 142, 142);
+}
+
+.recommendeUserFollowButton {
+  margin-left: auto;
+  color: rgb(0, 149, 246);
+  font-size: 12px;
+}
