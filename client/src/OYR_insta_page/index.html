@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <link rel="icon" href="./images/instalogo.png">
+    <script type="module" defer src="event.js"></script>
+    <script type="module" defer src="main.js"></script>
     <title>Instagram</title>
 </head>
 <body>
@@ -42,41 +44,8 @@
                         <p class="storyName">Peaches.Uni</p>
                     </div>
                 </div>
-                <div class="postingBoard">
-
-                    <div class="pb_header">
-                        <div class="userInfo">
-                            <img src="./images/peaches.png">
-                            <p class="userName"><strong>Peaches.Uni</strong></p>
-                        </div>
-                        <img class="pb_menu" onclick="openMenu('pb_menu')" src="./images/menu.png">
-                    </div>
-
-                    <div class="imageZone">
-                        <img src="./images/peachesJacket.png">
-                    </div>
-
-                    <div class="pb_footer">
-                        <div class="pb_f_header">
-                            <ul>
-                                <li><img id="0" src="./images/pb0.png" onclick="clickLi(0)" onmouseover="this.src='./images/main11.png'" onmouseout="this.src='./images/pb0.png'"></li>
-                                <li><img class="viewPosting" onclick="openMenu('viewPosting')" src="./images/pb1.png" onmouseover="this.src='./images/main2.png'" onmouseout="this.src='./images/pb1.png'"></li>
-                                <li><img src="./images/pb2.png" onmouseover="this.src='./images/main3.png'" onmouseout="this.src='./images/pb2.png'"></li>
-
-                            </ul>
-                            <img id="3" onclick="clickLi(3)" src="./images/pb3.png" onmouseover="this.src='./images/main4.png'" onmouseout="this.src='./images/pb3.png'">
-                        </div>
-                        <div class="pb_f_main">
-                            <p class="userName"><strong>Peaches.Uni</strong></p>
-                            <p>New 2022 S/S edition</p>
-                        </div>
-
-                        <div class="pb_f_footer">
-                            <img src="./images/faceEmg.png">
-                            <input placeholder="댓글 달기...">
-                        </div>
-                    </div>
-                </div>
+                <div class="postingLocation"></div>
+                
 
             </div>
             <div class="rightBoard">
@@ -144,7 +113,7 @@
         </div>
     </div>
 
-    <div class="commentModal hidden" onclick="closeMenu('commentModal')">
+    <div class="commentModal hidden">
         <div class="postingView">
             <div class="pv_Photo">
                 <img src="./images/peachesJacket.png">
@@ -172,25 +141,8 @@
                 </div>
 
                 
-                <div class="commentZone">
-                    <div class="comment">
-                        <div class="userInfo">
-                            <img src="./images/noneicon.png">
-                            <p class="userName"><strong>Cola.12.1</strong></p>
-                        </div>
-                        <div class="co_context"><p>Let's go!!!!</p></div>
-                    </div>
-                </div>
 
-                <div class="commentZone">
-                    <div class="comment">
-                        <div class="userInfo">
-                            <img src="./images/noneicon.png">
-                            <p class="userName"><strong>starlight.do8</strong></p>
-                        </div>
-                        <div class="co_context"><p>드랍드랍~~</p></div>
-                    </div>
-                </div>
+                <ul class="commentLocation"></ul>
 
                 <div class="pv_footer">
                     <div class="pb_f_header">
@@ -202,15 +154,16 @@
                         </ul>
                         <img id="3" onclick="clickLi(3)" src="./images/pb3.png" onmouseover="this.src='./images/main4.png'" onmouseout="this.src='./images/pb3.png'">
                     </div>
+                    <div class="like_cnt"> 좋아요 5개</div>
 
                     <div class="pv_w_Comment">
                         <img src="./images/faceEmg.png">
-                        <input placeholder="댓글 달기...">
+                        <input class="commentInput" placeholder="댓글 달기...">
+                        <p class="buttonP enterInput">게시</p>
                     </div>
                 </div>
                 
             </div>
-
             <div class="cancelBtn" onclick="closeMenu('commentModal')">
                 <img src="./images/cancel.png">
             </div>
