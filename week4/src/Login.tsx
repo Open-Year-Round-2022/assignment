@@ -5,16 +5,9 @@ import "./Login.css";
 function Login() {
   return (
     <div>
-      <meta charSet="utf-8" />
-      <meta
-        id="viewport"
-        name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
-      />
-      <link rel="stylesheet" type="text/css" href="./style.css" />
-      <section>
-        <main>
-          <article>
+      <div style={{top: 100}}>
+        <div style={{alignItems: "center"}}>
+          <div style={{flexDirection: "row"}}>
             <div className="phoneContainer">
               {" "}
               {/* 휴대폰 이미지 */}
@@ -156,8 +149,8 @@ function Login() {
               </div>
             </div>{" "}
             {/* 로그인 창 */}
-          </article>
-          <footer>
+          </div>
+          <div>
             <div
               style={{
                 backgroundColor: "rgba(var(--bg-default), 1)",
@@ -258,9 +251,9 @@ function Login() {
                 </div>
               </div>
             </div>
-          </footer>
-        </main>
-      </section>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
