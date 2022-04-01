@@ -1,13 +1,14 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
     <div>
-      <div style={{top: 100}}>
-        <div style={{alignItems: "center"}}>
-          <div style={{flexDirection: "row"}}>
+      <div style={{ top: 100 }}>
+        <div style={{ alignItems: "center" }}>
+          <div style={{ flexDirection: "row" }}>
             <div className="phoneContainer">
               {" "}
               {/* 휴대폰 이미지 */}
@@ -63,10 +64,15 @@ function Login() {
                         </div>
                       </div>
                       <div className="loginButtonContainer">
-                        <button className="loginButton">
-                          <div className="loginButtonInner">로그인</div>
-                        </button>
-                      </div>{" "}
+                        <Link to="feed" style={{ width: "100%" }}>
+                          <button
+                            className="loginButton"
+                            style={{ width: "100%" }}
+                          >
+                            <div className="loginButtonInner">로그인</div>
+                          </button>
+                        </Link>
+                      </div>
                       {/* 로그인 버튼 */}
                       <div className="divider">
                         {" "}
