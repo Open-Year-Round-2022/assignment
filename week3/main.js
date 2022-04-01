@@ -1,27 +1,114 @@
-const express = require('express');
+import express from "express";
 const app = express();
-const loginPage = require('./js/loginPage.js');
-const mainPage = require('./js/mainPage.js');
-const compression = require('compression');
-const fs = require('fs');
-const { response } = require('express');
+import compression from "compression";
+// import fs from "fs";
+import mysql from "./js/database.js";
+import template from "./js/template.js";
+import path from 'path';
+import bodyPaser from 'body-parser';
+
+const __dirname = path.resolve();
+const db = mysql.init();
+mysql.conn(db);
 
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
 app.use(compression());
+app.use(bodyPaser.json());
+app.use(bodyPaser.urlencoded({ extended: true }));
 
-// app.post('/instagram/login_process', (req, res) => {
-//     res.redirect('/instagram/mainPage');
-// });
+app.post('/instagram/mainPage', (req, res) => {
+    db.query('SELECT * FROM Users, Post WHERE Users.userid = Post.userid', (error, data) => {
+        if (error) {
+            throw error;
+        }
+
+        let feed_post = "";
+        let i = 0;
+        while (i < data.length) {
+            feed_post += template.feed_post(data[i].userid, data[i].profileImg, data[i].name, data[i].img, data[i].text, data[i].likes);
+            i += 1;
+        }
+
+        let html = template.HTML(feed_post);
+        res.send(html);
+    });
+});
 
 app.get('/instagram/loginPage', (req, res) => {
-    // res.send(loginPage.HTML());
     res.sendFile(__dirname + '/html/loginPage.html');
 });
 
-app.post('/instagram/mainPage', (req, res) => {
-    res.sendFile(__dirname + '/html/mainPage.html');
+app.post('/instagram/hartclick', (req, res) => {
+    const post = req.body;
+    if (post.status === 1) {
+        db.query('UPDATE Post SET likes= likes+1 WHERE id = ?', [post.id], (error, data) => {
+            if (error) {
+                throw error;
+            }
+        })
+    }
+    else if (post.status === 0) {
+        db.query('UPDATE Post SET likes= likes-1 WHERE id = ?', [post.id], (error, data) => {
+            if (error) {
+                throw error;
+            }
+        })
+    }
+    else {
+        console.log(error);
+    }
+
+    let info = {};
+
+    db.query('SELECT * FROM Post WHERE id = ?', [post.id], (error, data) => {
+        if (error) {
+            throw error;
+        }
+        info['likes'] = data[0].likes;
+        res.json(info);
+    });
 });
+
+app.post('/instagram/feed_comment', (req, res) => {
+    const post = req.body;
+    db.query('SELECT * FROM Comment WHERE postId = ?', [post.postId], (error, data) => {
+        if (error) {
+            throw error;
+        }
+        res.json(data);
+    });
+});
+
+app.post('/instagram/feed_comment/add', (req, res) => {
+    const post = req.body;
+    db.query('INSERT INTO Comment VALUES(?, ?, ?, ?);', [post.postId, post.text, post.userId, post.data_num], (error, data) => {
+        if (error) {
+            throw error;
+        }
+    });
+    db.query('SELECT * FROM Comment WHERE postId = ?', [post.postId], (error, data) => {
+        if (error) {
+            throw error;
+        }
+        res.json(data);
+    })
+});
+
+app.post('/instagram/feed_comment/delete', (req, res) => {
+    const post = req.body;
+    db.query('DELETE FROM Comment WHERE data_num = ?', [post.data_num], (error, data) => {
+        if (error) {
+            throw error;
+        }
+    })
+    db.query('SELECT * FROM Comment WHERE postId = ?', [post.postId], (error, data) => {
+        if (error) {
+            throw error;
+        }
+        res.json(data);
+    })
+})
 
 app.listen(3000);

@@ -356,7 +356,7 @@
                         </div>
                     </div>
                     <div class="detail_right_body">
-
+                        <ul id="comments"></ul>
                     </div>
                     <div class="detail_right_footer">
                         <div class="feed_bottom_icons">
@@ -392,8 +392,10 @@
                             <div class="smile_icon">
                                 <img src="../images/smile.png" alt="">
                             </div>
-                            <input type="text" placeholder="댓글달기...">
-                            <div class="upload_btn">게시</div>
+                            <form action="" id="instaForm">
+                                <input type="text" name="comment" placeholder="댓글달기...">
+                                <button class="upload_btn">게시</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -407,6 +409,7 @@
     <script src="../js/mainPage.js"></script>
     <script src="../js/feed_more_modal.js"></script>
     <script src="../js/feed_detail_modal.js"></script>
+    <script src="../js/comment.js"></script>
 </body>
 
 </html>

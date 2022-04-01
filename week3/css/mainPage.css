@@ -147,7 +147,7 @@ article{
 	flex-direction: column;
 	width: 65px;
 	height: 65px;
-	background-image: url('/rainbow.png');
+	background-image: url('../images/rainbow.png');
 	background-size: contain;
 }
 
@@ -265,7 +265,7 @@ article{
 	height: 40px;
 }
 
-.likes{
+.likes_text{
 	display: flex;
 	font-size: 14px;
 	font-weight: bold;
@@ -332,11 +332,6 @@ article{
 	background: transparent;
 }
 
-.comment_field input:focus ~ .upload_btn{
-	pointer-events: initial;
-	opacity: 1;
-}
-
 .comment_field .upload_btn{
 	color: #3897f0;
 	position: absolute;
@@ -345,8 +340,12 @@ article{
 	top: 50%;
 	transform: translateY(-50%);
 	cursor: pointer;
-	pointer-events: none;
 	opacity: 0.6;
+}
+
+.comment_field form{
+	display: flex;
+	flex-direction: row;
 }
 
 aside{
