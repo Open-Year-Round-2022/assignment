@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:../db"
+  url      = "file:../database.db"
 }
 
 model Post {
@@ -39,6 +39,7 @@ model User {
   Name     String
   Username String
   ImageURL String
+  Password String
   Post     Post[]
   Reply    Reply[]
 }
