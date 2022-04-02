@@ -1,7 +1,11 @@
 import React from "react";
-import "./Feed.css";
-import FeedPost from "./components/FeedPost";
-import { PostModel } from "./model/Post";
+import Head from 'next/head';
+import Image from 'next/image';
+
+import FeedPost from '../components/FeedPost';
+import { PostModel } from "../src/model/Post";
+import Img_MyAvatar from '../public/avatar.jpg';
+import Img_Instagram from '../public/logo.png';
 
 const dummyPosts = new Array(100)
   .fill(0)
@@ -11,8 +15,15 @@ const dummyPosts = new Array(100)
 function Feed() {
   const [posts, setPosts] = React.useState(dummyPosts);
 
+  const MyAvatar = () => (
+    <Image alt="kyuuw님의 프로필 사진" draggable="false" src={Img_MyAvatar} />
+  );
+
   return (
     <div>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <div style={{ width: "100%" }}>
         <nav style={{ alignItems: "stretch" }}>
           <div
@@ -47,7 +58,7 @@ function Feed() {
                 }}
               >
                 <div style={{ height: "36px" }}>
-                  <img src="./images/logo.png" style={{ maxHeight: "100%" }} />
+                  <Image src={Img_Instagram} objectFit={"contain"} />
                 </div>
               </div>
               <div
@@ -254,11 +265,7 @@ function Feed() {
                   </svg>
                 </div>
                 <div className="navButton circleBorder">
-                  <img
-                    alt="kyuuw님의 프로필 사진"
-                    draggable="false"
-                    src="./images/avatar.jpg"
-                  />
+                  <MyAvatar />
                 </div>
               </div>
             </div>
@@ -316,7 +323,7 @@ function Feed() {
                     style={{ width: "56px", height: "56px" }}
                     className="circleBorder"
                   >
-                    <img src="images/avatar.jpg" />
+                    <MyAvatar />
                   </div>
                 </div>
                 <div
@@ -369,7 +376,7 @@ function Feed() {
               <div>
                 <div className="recommendedUserContainer">
                   <div className="circleBorder recommendedUserImage">
-                    <img src="./images/feed_avatar01.jpeg" />
+                    <MyAvatar />
                   </div>
                   <div className="recommendedUserIdAndDescriptionContainer">
                     <div className="recommendedUserId">kyuuw</div>
@@ -381,7 +388,7 @@ function Feed() {
                 </div>
                 <div className="recommendedUserContainer">
                   <div className="circleBorder recommendedUserImage">
-                    <img src="./images/feed_avatar01.jpeg" />
+                    <MyAvatar />
                   </div>
                   <div className="recommendedUserIdAndDescriptionContainer">
                     <div className="recommendedUserId">kyuuw</div>
@@ -393,7 +400,7 @@ function Feed() {
                 </div>
                 <div className="recommendedUserContainer">
                   <div className="circleBorder recommendedUserImage">
-                    <img src="./images/feed_avatar01.jpeg" />
+                    <MyAvatar />
                   </div>
                   <div className="recommendedUserIdAndDescriptionContainer">
                     <div className="recommendedUserId">kyuuw</div>

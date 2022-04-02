@@ -1,9 +1,8 @@
 import React from "react";
 import FeedReplyLines from "./FeedReplyLines";
-import "../Feed.css";
-import { fromDate } from "../utils/date";
-import { PostModel } from "../model/Post";
-import { UserModel } from "../model/User";
+import { fromDate } from "../src/utils/date";
+import { PostModel } from "../src/model/Post";
+import { UserModel } from "../src/model/User";
 
 type Props = {
   post: PostModel;

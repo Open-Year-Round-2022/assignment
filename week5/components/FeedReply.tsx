@@ -1,5 +1,5 @@
 import React from "react";
-import { ReplyModel } from "../model/Reply";
+import { ReplyModel } from "../src/model/Reply";
 
 
 type Props = {

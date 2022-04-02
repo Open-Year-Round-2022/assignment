@@ -1,11 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./Login.css";
-import { Link } from "react-router-dom";
+import Image from "next/image";
+import Link from "next/link";
+import Head from 'next/head';
+
+import AndroidBadge from "../assets/badges/android_playstore_badge.png";
+import IosBadge from "../assets/badges/ios_appstore_badge.png";
+import Screenshot01 from '../assets/phones/screenshot1.png';
 
 function Login() {
   return (
     <div>
+      <Head>
+        <title>Instagram Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      
       <div style={{ top: 100 }}>
         <div style={{ alignItems: "center" }}>
           <div style={{ flexDirection: "row" }}>
@@ -15,8 +24,8 @@ function Login() {
               <div>
                 {/*이미지 컨테이너*/}
                 <div style={{ margin: "27px 0 0 113px" }}>
-                  <img
-                    src="images/phones/screenshot1.png"
+                  <Image
+                    src={Screenshot01}
                     style={{ height: "538.84px", width: "250px" }}
                   />
                 </div>
@@ -24,18 +33,14 @@ function Login() {
             </div>
             <div className="loginContainer">
               <div className="loginBox">
-                {" "}
                 {/* 로그인 박스 */}
                 <h1 className="headline sprite spriteHeadline">Instagram</h1>
                 <div className="inputsContainer">
-                  {" "}
                   {/* 로그인 입력 박스 */}
                   <form action="/" method="get">
                     <div className="inputs">
-                      {" "}
                       {/* 로그인 입력들 */}
                       <div className="inputContainer">
-                        {" "}
                         {/* 아이디 입력 */}
                         <div className="inputInner">
                           <label>
@@ -53,7 +58,6 @@ function Login() {
                         </div>
                       </div>
                       <div className="inputContainer">
-                        {" "}
                         {/* 비밀번호 입력 */}
                         <div className="inputInner">
                           <label>
@@ -64,7 +68,7 @@ function Login() {
                         </div>
                       </div>
                       <div className="loginButtonContainer">
-                        <Link to="feed" style={{ width: "100%" }}>
+                        <Link href="feed">
                           <button
                             className="loginButton"
                             style={{ width: "100%" }}
@@ -75,14 +79,12 @@ function Login() {
                       </div>
                       {/* 로그인 버튼 */}
                       <div className="divider">
-                        {" "}
                         {/* 또는 */}
                         <div className="divLine" />
                         <div style={{ margin: "0 18px" }}>또는</div>
                         <div className="divLine" />
                       </div>
                       <div className="fbLoginContainer">
-                        {" "}
                         {/* facebook login 버튼 */}
                         <button className="fbLoginButton">
                           <span className="sprite fbIcon" />
@@ -92,12 +94,11 @@ function Login() {
                         </button>
                       </div>
                     </div>
-                    <a className="forgetPassword">비밀번호를 잊으셨나요?</a>
+                    <p className="forgetPassword">비밀번호를 잊으셨나요?</p>
                   </form>
                 </div>
               </div>
               <div className="loginBox">
-                {" "}
                 {/* 가입하기 박스*/}
                 <div>
                   <p
@@ -135,25 +136,24 @@ function Login() {
                     flexDirection: "row",
                   }}
                 >
-                  {" "}
                   {/* badges */}
                   <a style={{ marginRight: "8px" }}>
-                    <img
+                    <Image
                       alt="appstore"
-                      src="images/badges/android_playstore_badge.png"
+                      src={AndroidBadge}
                       style={{ height: "40px" }}
                     />
                   </a>
                   <a>
-                    <img
+                    <Image
                       alt="playstore"
-                      src="images/badges/ios_appstore_badge.png"
+                      src={IosBadge}
                       style={{ height: "40px" }}
                     />
                   </a>
                 </div>
               </div>
-            </div>{" "}
+            </div>
             {/* 로그인 창 */}
           </div>
           <div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ReplyModel } from "../model/Reply";
+import { ReplyModel } from "../src/model/Reply";
 import FeedReply from "./FeedReply";
 
 type Props = {
@@ -24,8 +24,8 @@ function FeedReplyLines(props: Props) {
           marginBottom: "4px",
         }}
       ></div>
-      {replies.map((r) => (
-        <FeedReply reply={r} />
+      {replies.map((r, i) => (
+        <FeedReply reply={r} key={i}/>
       ))}
     </>
   );
