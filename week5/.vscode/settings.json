@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "oyr_insta",
+      "database": "${workspaceFolder:week5}/database.db"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}

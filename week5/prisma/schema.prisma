@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../db"
+}
+
+model Post {
+  PostID    String  @id
+  CreatedAt Int
+  Content   String
+  ImageURL  String
+  UserID    String
+  User      User    @relation(fields: [UserID], references: [UserID], onDelete: NoAction, onUpdate: NoAction)
+  Reply     Reply[]
+}
+
+model PostLike {
+  PostID String
+  UserID String
+
+  @@id([PostID, UserID])
+}
+
+model Reply {
+  ReplyID   String @id
+  CreatedAt Int
+  Content   String
+  PostID    String
+  UserID    String
+  Post      Post   @relation(fields: [PostID], references: [PostID], onDelete: NoAction, onUpdate: NoAction)
+  User      User   @relation(fields: [UserID], references: [UserID], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model User {
+  UserID   String  @id
+  Name     String
+  Username String
+  ImageURL String
+  Post     Post[]
+  Reply    Reply[]
+}

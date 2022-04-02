@@ -14,18 +14,18 @@ function Login() {
         <title>Instagram Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      
+
       <div style={{ top: 100 }}>
         <div style={{ alignItems: "center" }}>
           <div style={{ flexDirection: "row" }}>
             <div className="phoneContainer">
-              {" "}
               {/* 휴대폰 이미지 */}
               <div>
                 {/*이미지 컨테이너*/}
-                <div style={{ margin: "27px 0 0 113px" }}>
+                <div style={{ margin: "27px 0 0 113px", right: "10px" }}>
                   <Image
                     src={Screenshot01}
+                    objectFit={"contain"}
                     style={{ height: "538.84px", width: "250px" }}
                   />
                 </div>
