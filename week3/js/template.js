@@ -1,5 +1,5 @@
 const template = {
-    HTML: (feed_post) => {
+    HTML: (feed_post, profile_img, userid) => {
         return `
         <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +39,7 @@ const template = {
                     <img src="../images/더보기.png" alt="">
                     <img src="../images/나침반.png" alt="">
                     <img src="../images/heart.png" alt="">
-                    <img src="../images/profile_img1.jpg" alt="" class="profile_img">
+                    <img src="${profile_img}" alt="" class="profile_img">
                 </div>
             </section>
         </header>
@@ -103,10 +103,10 @@ const template = {
                 <div class="side_box">
                     <div class="user_profile">
                         <div class="profile_thumb">
-                            <img src="../images/profile_img1.jpg" alt="내프로필">
+                            <img src="${profile_img}" alt="내프로필">
                         </div>
                         <div class="detail">
-                            <div class="id">62hoon99</div>
+                            <div class="id">${userid}</div>
                         </div>
                     </div>
                     <div class="users">
@@ -230,7 +230,7 @@ const template = {
                     <div class="feed_bottom_icons">
                         <div class="left_icons">
                             <div class="hart_icon">
-                                <img src="../images/하트.png" alt="" class="hart_img" data-clicked="0">
+                                <img src="" alt="" id="modal_hart" data-clicked="0">
                             </div>
                             <div class="bubble_icon">
                                 <img src="../images/말풍선.png" alt="" class="bubble_img">

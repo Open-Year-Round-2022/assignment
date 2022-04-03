@@ -20,6 +20,9 @@ const dbcon = {
                 console.log("mysql connection sucessfully");
             }
         })
+    },
+    store: () => {
+        return dbinfo;
     }
 }
 

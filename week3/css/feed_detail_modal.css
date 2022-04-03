@@ -15,14 +15,15 @@
     display: flex;
     align-items: center;
     background-color: white;
-    margin: 24px 64px;
+    margin: 82px 64px;
     border-radius: 0 4px 4px 0;
+
 }
 
 .feed_detail_modal_box {
     display: flex;
-    height: 100%;
-    margin: 0;
+    height: 80%;
+    /* margin: 0; */
     width: 100%;
 }
 
@@ -63,19 +64,30 @@
 #comment_list {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 #comment_list li {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
 }
 
 .comment_delete {
     color: #3897f0;
     margin-left: 20px;
     cursor: pointer;
+}
+
+.comment_profileImg {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .detail_right_footer .comment_field {

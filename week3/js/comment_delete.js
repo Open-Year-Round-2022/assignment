@@ -18,10 +18,17 @@ document.addEventListener('click', (e) => {
             .then(data => {
                 document.querySelector('#comment_list').innerHTML = "";
                 let comment_list = '';
-                for (let k = 0; k < data.length; k++) {
-                    comment_list += `<li data-num="${data[k].data_num}">`;
-                    comment_list += data[k].text;
-                    comment_list += '<div class="comment_delete">삭제</div>'
+                for (let j = 0; j < data.length; j++) {
+                    comment_list += `<li data-num="${data[j].data_num}">`;
+                    comment_list += `<div class="user_container"><img class="comment_profileImg" src=${data[j].profileImg}>`;
+                    comment_list += `<div class="userId">${data[j].userid}</div></div>`;
+                    comment_list += data[j].text;
+                    if (data[0].sessionId == data[j].userid) {
+                        comment_list += '<div class="comment_delete">삭제</div>';
+                    }
+                    else {
+                        comment_list += '<div class="comment_emptybox"></div>';
+                    }
                     comment_list += '</li>';
                 }
                 document.querySelector('#comment_list').innerHTML = comment_list;
