@@ -1,0 +1,41 @@
+#left{
+  position:relative;
+}
+#story-container{
+  display:flex;
+  position:absolute;
+  top:0;
+  right:0;
+  width:450px;
+  height:90px;
+  margin:2% 0 1% 0;
+}
+
+.story{
+  box-sizing:border-box;
+  width:60px;
+  margin: 12px 5px 0px 10px;
+}
+
+.left-story{
+  position:relative;
+}
+.story-profile{
+  position:absolute; 
+  width:45px;
+  left:2.5px;
+  top:3px;
+  border-radius:70%;
+}
+.story-template{
+  position:absolute;
+  width:50px;
+}
+
+.story-nickname{
+  position:absolute;
+  top:50px;
+  font-size:10px;
+  font-weight:100;
+  
+}
