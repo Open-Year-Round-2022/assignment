@@ -7,6 +7,7 @@ import path from 'path';
 import bodyPaser from 'body-parser';
 import session from 'express-session';
 import MySQLStoreSession from 'express-mysql-session';
+import flash from 'connect-flash';
 const MySQLStore = MySQLStoreSession(session);
 
 const __dirname = path.resolve();
@@ -28,38 +29,80 @@ app.use(
         saveUninitialized: false
     })
 );
+app.use(flash());
 
-app.post('/instagram/mainPage', (req, res) => {
-    const userInfo = req.body;
+/* passport 추가 */
+import passport from 'passport';
+import passportLocal from 'passport-local';
+const LocalStrategy = passportLocal.Strategy;
 
-    db.query('SELECT * FROM Users WHERE userid = ? and passwords = ?', [userInfo.userid, userInfo.password], (error, userdata) => {
-        if (userdata.length == 0) {
-            res.redirect('/instagram/loginPage');
-        }
-        else {
-            db.query('SELECT * FROM Users, Post WHERE Users.userid = Post.userid ORDER BY Post.id', (error, data) => {
-                if (error) {
-                    throw error;
-                }
+app.use(passport.initialize());
+app.use(passport.session());
 
-                let feed_post = "";
-                let i = 0;
-                while (i < data.length) {
-                    feed_post += template.feed_post(data[i].userid, data[i].profileImg, data[i].name, data[i].img, data[i].text, data[i].likes);
-                    i += 1;
-                }
-                let html = template.HTML(feed_post, userdata[0].profileImg, userdata[0].userid);
+passport.serializeUser(function (user, done) {
+    done(null, user.userid);
+});
+passport.deserializeUser(function (user, done) {
+    done(null, user);
+});
 
-                req.session.userid = userdata[0].userid;
-                req.session.save((error) => {
-                    if (error) {
-                        throw error;
-                    }
-                    res.send(html);
+passport.use(new LocalStrategy({
+    usernameField: 'userid',
+    passwordField: 'password'
+},
+    function (username, password, done) {
+        db.query('SELECT * FROM Users WHERE userid=? and passwords=?', [username, password], (error, data) => {
+            if (error) {
+                throw error;
+            }
+            const authData = data[0];
+            if (authData === undefined) {
+                return done(null, false, {
+                    message: 'Incorrect username.'
                 });
-            });
+            } else if (username === authData.userid) {
+                if (password === authData.passwords) {
+                    return done(null, authData, {
+                        message: 'Welcome.'
+                    });
+                } else {
+                    return done(null, false, {
+                        message: 'Incorrect password.'
+                    });
+                }
+            }
+        });
+    }
+));
+
+app.post('/instagram/login_process', passport.authenticate('local', {
+    successRedirect: '/instagram/mainPage',
+    failureRedirect: '/instagram/loginPage',
+    failureFlash: true,
+    successFlash: true
+}));
+
+app.get('/instagram/mainPage', (req, res) => {
+    db.query('SELECT * FROM Users, Post WHERE Users.userid = Post.userid ORDER BY Post.id', (error, data) => {
+        if (error) {
+            throw error;
         }
-    })
+
+        let feed_post = "";
+        let i = 0;
+        while (i < data.length) {
+            feed_post += template.feed_post(data[i].userid, data[i].profileImg, data[i].name, data[i].img, data[i].text, data[i].likes);
+            i += 1;
+        }
+
+        db.query('SELECT * FROM Users WHERE userid = ?', [req.session.passport.user], (error, data) => {
+            if (error) {
+                throw error;
+            }
+            let html = template.HTML(feed_post, data[0].profileImg, data[0].userid);
+            res.send(html);
+        });
+    });
 });
 
 app.get('/instagram/loginPage', (req, res) => {
@@ -87,14 +130,14 @@ app.post('/instagram/hartclick', (req, res) => {
             if (error) {
                 throw error;
             }
-        })
+        });
     }
     else if (post.status === 0) {
         db.query('UPDATE Post SET likes= likes-1 WHERE id = ?', [post.id], (error, data) => {
             if (error) {
                 throw error;
             }
-        })
+        });
     }
     else {
         console.log(error);
@@ -119,7 +162,7 @@ app.post('/instagram/feed_comment', (req, res) => {
         }
 
         if (data.length > 0) {
-            data[0].sessionId = req.session.userid;
+            data[0].sessionId = req.session.passport.user;
         }
         res.json(data);
     });
@@ -127,7 +170,7 @@ app.post('/instagram/feed_comment', (req, res) => {
 
 app.post('/instagram/feed_comment/add', (req, res) => {
     const post = req.body;
-    db.query('INSERT INTO Comment VALUES(?, ?, ?, ?)', [post.postId, post.text, req.session.userid, post.data_num], (error, data) => {
+    db.query('INSERT INTO Comment VALUES(?, ?, ?, ?)', [post.postId, post.text, req.session.passport.user, post.data_num], (error, data) => {
         if (error) {
             throw error;
         }
@@ -137,7 +180,7 @@ app.post('/instagram/feed_comment/add', (req, res) => {
             throw error;
         }
         if (data.length > 0) {
-            data[0].sessionId = req.session.userid;
+            data[0].sessionId = req.session.passport.user;
         }
         res.json(data);
     });
@@ -155,7 +198,7 @@ app.post('/instagram/feed_comment/delete', (req, res) => {
             throw error;
         }
         if (data.length > 0) {
-            data[0].sessionId = req.session.userid;
+            data[0].sessionId = req.session.passport.user;
         }
         res.json(data);
     });
