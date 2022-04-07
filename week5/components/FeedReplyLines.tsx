@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { ReplyModel } from "../src/model/Reply";
 import FeedReply from "./FeedReply";
+import { ReplyFull } from "../type/ReplyFull";
 
 type Props = {
-  replies: ReplyModel[];
+  replies: ReplyFull[];
 };
 function FeedReplyLines(props: Props) {
   const [replies] = useState(props.replies);

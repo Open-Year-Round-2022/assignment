@@ -8,17 +8,11 @@ import { db } from "../src/db";
 import Img_MyAvatar from "../public/avatar.jpg";
 import Img_Instagram from "../public/logo.png";
 import { sessionOptions } from "../src/config/sessionOptions";
-import { Post, User } from "@prisma/client";
-
-type FeedWithLikes = Post & {
-  PostLike: {
-    User: User,
-  }
-}
+import { PostLike, User } from "@prisma/client";
+import { PostFull } from "../type/PostFull";
 
 export const getServerSideProps = withIronSessionSsr(async (context) => {
   const { id } = context.req.session;
-
   const user = await db.user.findUnique({
     where: {
       UserID: id,
@@ -33,39 +27,73 @@ export const getServerSideProps = withIronSessionSsr(async (context) => {
     };
   }
 
+  console.log(user);
+
   const posts = await db.post.findMany({
-    where: {
-      UserID: user.UserID,
-    },
     include: {
       PostLike: {
-        select: {
+        include: {
           User: true,
-        }
+        },
       },
-    }
+      User: true,
+      Reply: {
+        include: {
+          User: true,
+        },
+      },
+    },
+    where: {
+      UserID: {
+        not: user.UserID,
+      },
+    },
   });
 
-  return {
-    props: {
-      user,
-      posts: user.Post,
+  const otherUsers = await db.user.findMany({
+    where: {
+      UserID: {
+        not: user.UserID,
+      },
     },
+    take: 3,
+  });
+
+  posts.sort(() => Math.random() - 0.5);
+  otherUsers.sort(() => Math.random() - 0.5);
+
+  const props = {
+    user,
+    posts,
+    otherUsers,
+  };
+
+  return {
+    props,
   };
 }, sessionOptions);
 
 type Props = {
   user: User;
-  posts: FeedWithLikes[];
+  posts: PostFull[];
+  otherUsers: User[];
 };
 function Feed(props: Props) {
   const [posts, setPosts] = React.useState(props.posts);
   const [user, setUser] = React.useState(props.user);
+  const [otherUsers, setOtherUsers] = React.useState(props.otherUsers);
 
-  useEffect(() => {}, []);
-
-  const MyAvatar = () => (
-    <Image alt="kyuuw님의 프로필 사진" draggable="false" src={user.ImageURL} />
+  type MyAvatarProps = {
+    user: User;
+    key: number;
+  };
+  const MyAvatar = (props: MyAvatarProps) => (
+    <Image
+      alt="kyuuw님의 프로필 사진"
+      draggable="false"
+      src={props.user.ImageURL}
+      layout={"fill"}
+    />
   );
 
   return (
@@ -314,7 +342,7 @@ function Feed(props: Props) {
                   </svg>
                 </div>
                 <div className="navButton circleBorder">
-                  <MyAvatar />
+                  <MyAvatar user={user} key={0} />
                 </div>
               </div>
             </div>
@@ -348,7 +376,7 @@ function Feed(props: Props) {
               <div style={{ paddingBottom: "24px" }}>
                 <div style={{ height: "50px" }}></div>
                 {posts.map((p, i) => (
-                  <FeedPost post={p} key={i} />
+                  <FeedPost post={p} key={i} user={user} />
                 ))}
               </div>
             </div>
@@ -372,7 +400,7 @@ function Feed(props: Props) {
                     style={{ width: "56px", height: "56px" }}
                     className="circleBorder"
                   >
-                    <MyAvatar />
+                    <MyAvatar user={user} />
                   </div>
                 </div>
                 <div
@@ -383,9 +411,9 @@ function Feed(props: Props) {
                   }}
                 >
                   <div style={{ fontWeight: 800, color: "rgb(38, 38, 38)" }}>
-                    kyuuuw
+                    {user.Name}
                   </div>
-                  <div style={{ color: "rgb(142, 142, 142)" }}>이규원</div>
+                  <div style={{ color: "rgb(142, 142, 142)" }}>{user.Username}</div>
                 </div>
                 <div
                   style={{
@@ -423,42 +451,20 @@ function Feed(props: Props) {
                 </div>
               </div>
               <div>
-                <div className="recommendedUserContainer">
-                  <div className="circleBorder recommendedUserImage">
-                    <MyAvatar />
-                  </div>
-                  <div className="recommendedUserIdAndDescriptionContainer">
-                    <div className="recommendedUserId">kyuuw</div>
-                    <div className="recommendedUserDescription">
-                      회원님을 위한 추천
+                {otherUsers.map((u, i) => (
+                  <div className="recommendedUserContainer">
+                    <div className="circleBorder recommendedUserImage">
+                      <MyAvatar user={u} />
                     </div>
-                  </div>
-                  <div className="recommendeUserFollowButton">팔로우</div>
-                </div>
-                <div className="recommendedUserContainer">
-                  <div className="circleBorder recommendedUserImage">
-                    <MyAvatar />
-                  </div>
-                  <div className="recommendedUserIdAndDescriptionContainer">
-                    <div className="recommendedUserId">kyuuw</div>
-                    <div className="recommendedUserDescription">
-                      회원님을 위한 추천
+                    <div className="recommendedUserIdAndDescriptionContainer">
+                      <div className="recommendedUserId">{u.Name}</div>
+                      <div className="recommendedUserDescription">
+                        회원님을 위한 추천
+                      </div>
                     </div>
+                    <div className="recommendeUserFollowButton">팔로우</div>
                   </div>
-                  <div className="recommendeUserFollowButton">팔로우</div>
-                </div>
-                <div className="recommendedUserContainer">
-                  <div className="circleBorder recommendedUserImage">
-                    <MyAvatar />
-                  </div>
-                  <div className="recommendedUserIdAndDescriptionContainer">
-                    <div className="recommendedUserId">kyuuw</div>
-                    <div className="recommendedUserDescription">
-                      회원님을 위한 추천
-                    </div>
-                  </div>
-                  <div className="recommendeUserFollowButton">팔로우</div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

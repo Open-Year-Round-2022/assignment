@@ -1,3 +1,4 @@
+import { Reply } from "@prisma/client";
 import { withIronSessionApiRoute } from "iron-session/next";
 import { NextApiRequest, NextApiResponse } from "next";
 import { sessionOptions } from "../../src/config/sessionOptions";
@@ -9,24 +10,11 @@ async function login(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  console.log(req.body);
-
-  const { name, password } = req.body as { name: string; password: string };
-  const user = await db.user.findFirst({
-    where: {
-      Name: name,
-      Password: password,
-    },
+  const { reply } = req.body as { reply: Reply };
+  await db.reply.create({
+    data: reply,
   });
 
-
-  if(!user){
-    res.status(404).send("User not found or incorrect password");
-    return;
-  }
-
-  req.session.id = user.UserID;
-  await req.session.save();
-  res.json(user);
+  res.json(reply);
 }
 export default withIronSessionApiRoute(login, sessionOptions);

@@ -1,11 +1,12 @@
 import React from "react";
-import { ReplyModel } from "../src/model/Reply";
-
+import { ReplyFull } from "../type/ReplyFull";
 
 type Props = {
-    reply: ReplyModel;
-};
+  reply: ReplyFull
+  key: number,
+}
 function FeedReply(props: Props) {
+  console.log(props);
   const [reply] = React.useState(props.reply);
 
   return (
@@ -24,9 +25,9 @@ function FeedReply(props: Props) {
           flex: "1 1 auto",
         }}
       >
-        <strong>{reply.username}</strong>
+        <strong>{reply.User.Name}</strong>
         &nbsp;
-        <span>{reply.content}</span>
+        <span>{reply.Content}</span>
       </div>
       <span>
         <div

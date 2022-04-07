@@ -1,13 +1,26 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Head from 'next/head';
+import Head from "next/head";
 
 import AndroidBadge from "../assets/badges/android_playstore_badge.png";
 import IosBadge from "../assets/badges/ios_appstore_badge.png";
-import Screenshot01 from '../assets/phones/screenshot1.png';
+import Screenshot01 from "../assets/phones/screenshot1.png";
+import axios from "axios";
 
 function Login() {
+  const [name, setName] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const onLoginClick = async (e) => {
+    await axios.post("/api/login", {
+      name,
+      password,
+    }).then(() => {
+      window.location.href = "/feed";
+    });
+  };
+
   return (
     <div>
       <Head>
@@ -52,6 +65,9 @@ function Login() {
                               autoCorrect="off"
                               maxLength={75}
                               type="text"
+                              onChange={(e) => {
+                                setName(e.target.value);
+                              }}
                             />
                           </label>
                           <div />
@@ -62,20 +78,23 @@ function Login() {
                         <div className="inputInner">
                           <label>
                             <span className="inputPlaceHolder">비밀번호</span>
-                            <input />
+                            <input
+                              onChange={(e) => {
+                                setPassword(e.target.value);
+                              }}
+                            />
                           </label>
                           <div />
                         </div>
                       </div>
                       <div className="loginButtonContainer">
-                        <Link href="feed">
-                          <button
-                            className="loginButton"
-                            style={{ width: "100%" }}
-                          >
-                            <div className="loginButtonInner">로그인</div>
-                          </button>
-                        </Link>
+                        <button
+                          className="loginButton"
+                          style={{ width: "100%" }}
+                          onClick={onLoginClick}
+                        >
+                          <div className="loginButtonInner">로그인</div>
+                        </button>
                       </div>
                       {/* 로그인 버튼 */}
                       <div className="divider">
