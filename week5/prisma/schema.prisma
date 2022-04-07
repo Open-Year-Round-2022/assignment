@@ -8,18 +8,21 @@ datasource db {
 }
 
 model Post {
-  PostID    String  @id
+  PostID    String     @id
   CreatedAt Int
   Content   String
   ImageURL  String
   UserID    String
-  User      User    @relation(fields: [UserID], references: [UserID], onDelete: NoAction, onUpdate: NoAction)
+  User      User       @relation(fields: [UserID], references: [UserID], onDelete: NoAction, onUpdate: NoAction)
+  PostLike  PostLike[]
   Reply     Reply[]
 }
 
 model PostLike {
   PostID String
   UserID String
+  Post   Post   @relation(fields: [PostID], references: [PostID], onDelete: NoAction, onUpdate: NoAction)
+  User   User   @relation(fields: [UserID], references: [UserID], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([PostID, UserID])
 }
@@ -35,11 +38,12 @@ model Reply {
 }
 
 model User {
-  UserID   String  @id
+  UserID   String     @id
   Name     String
   Username String
   ImageURL String
   Password String
   Post     Post[]
+  PostLike PostLike[]
   Reply    Reply[]
 }

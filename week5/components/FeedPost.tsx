@@ -1,11 +1,10 @@
 import React from "react";
 import FeedReplyLines from "./FeedReplyLines";
 import { fromDate } from "../src/utils/date";
-import { PostModel } from "../src/model/Post";
-import { UserModel } from "../src/model/User";
+import { Post } from "@prisma/client";
 
 type Props = {
-  post: PostModel;
+  post: Post;
 };
 function FeedPost(props: Props) {
   const [post, setPost] = React.useState(props.post.props);

@@ -1,22 +1,71 @@
-import React from "react";
-import Head from 'next/head';
-import Image from 'next/image';
+import React, { useEffect } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import { withIronSessionSsr } from "iron-session/next";
 
-import FeedPost from '../components/FeedPost';
-import { PostModel } from "../src/model/Post";
-import Img_MyAvatar from '../public/avatar.jpg';
-import Img_Instagram from '../public/logo.png';
+import FeedPost from "../components/FeedPost";
+import { db } from "../src/db";
+import Img_MyAvatar from "../public/avatar.jpg";
+import Img_Instagram from "../public/logo.png";
+import { sessionOptions } from "../src/config/sessionOptions";
+import { Post, User } from "@prisma/client";
 
-const dummyPosts = new Array(100)
-  .fill(0)
-  .splice(0, 5)
-  .map(() => PostModel.createRandom());
+type FeedWithLikes = Post & {
+  PostLike: {
+    User: User,
+  }
+}
 
-function Feed() {
-  const [posts, setPosts] = React.useState(dummyPosts);
+export const getServerSideProps = withIronSessionSsr(async (context) => {
+  const { id } = context.req.session;
+
+  const user = await db.user.findUnique({
+    where: {
+      UserID: id,
+    },
+  });
+  if (!user) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/",
+      },
+    };
+  }
+
+  const posts = await db.post.findMany({
+    where: {
+      UserID: user.UserID,
+    },
+    include: {
+      PostLike: {
+        select: {
+          User: true,
+        }
+      },
+    }
+  });
+
+  return {
+    props: {
+      user,
+      posts: user.Post,
+    },
+  };
+}, sessionOptions);
+
+type Props = {
+  user: User;
+  posts: FeedWithLikes[];
+};
+function Feed(props: Props) {
+  const [posts, setPosts] = React.useState(props.posts);
+  const [user, setUser] = React.useState(props.user);
+
+  useEffect(() => {}, []);
 
   const MyAvatar = () => (
-    <Image alt="kyuuw님의 프로필 사진" draggable="false" src={Img_MyAvatar} />
+    <Image alt="kyuuw님의 프로필 사진" draggable="false" src={user.ImageURL} />
   );
 
   return (
@@ -418,5 +467,4 @@ function Feed() {
     </div>
   );
 }
-
 export default Feed;
