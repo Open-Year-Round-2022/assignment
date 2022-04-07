@@ -342,7 +342,7 @@ function Feed(props: Props) {
                   </svg>
                 </div>
                 <div className="navButton circleBorder">
-                  <MyAvatar user={user} key={0} />
+                  <MyAvatar user={user} key={200} />
                 </div>
               </div>
             </div>
@@ -400,7 +400,7 @@ function Feed(props: Props) {
                     style={{ width: "56px", height: "56px" }}
                     className="circleBorder"
                   >
-                    <MyAvatar user={user} />
+                    <MyAvatar user={user} key={100}/>
                   </div>
                 </div>
                 <div
@@ -454,7 +454,7 @@ function Feed(props: Props) {
                 {otherUsers.map((u, i) => (
                   <div className="recommendedUserContainer">
                     <div className="circleBorder recommendedUserImage">
-                      <MyAvatar user={u} />
+                      <MyAvatar user={u} key={i}/>
                     </div>
                     <div className="recommendedUserIdAndDescriptionContainer">
                       <div className="recommendedUserId">{u.Name}</div>
