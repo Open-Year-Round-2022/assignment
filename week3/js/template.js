@@ -39,7 +39,7 @@ const template = {
                     <img src="../images/더보기.png" alt="">
                     <img src="../images/나침반.png" alt="">
                     <img src="../images/heart.png" alt="">
-                    <img src="${profile_img}" alt="" class="profile_img">
+                    <a href="/logout"><img src="${profile_img}" alt="" id="logout" class="profile_img"></a>
                 </div>
             </section>
         </header>

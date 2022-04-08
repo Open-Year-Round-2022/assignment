@@ -34,6 +34,7 @@ app.use(flash());
 /* passport 추가 */
 import passport from 'passport';
 import passportLocal from 'passport-local';
+import { response } from "express";
 const LocalStrategy = passportLocal.Strategy;
 
 app.use(passport.initialize());
@@ -63,11 +64,11 @@ passport.use(new LocalStrategy({
             } else if (username === authData.userid) {
                 if (password === authData.passwords) {
                     return done(null, authData, {
-                        message: 'Welcome.'
+                        // message: 'Welcome.'
                     });
                 } else {
                     return done(null, false, {
-                        message: 'Incorrect password.'
+                        // message: 'Incorrect password.'
                     });
                 }
             }
@@ -203,5 +204,12 @@ app.post('/instagram/feed_comment/delete', (req, res) => {
         res.json(data);
     });
 });
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    req.session.save((err) => {
+        res.redirect('/instagram/loginPage');
+    })
+})
 
 app.listen(3000);
