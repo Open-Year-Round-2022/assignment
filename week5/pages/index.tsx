@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 
-import AndroidBadge from "../assets/badges/android_playstore_badge.png";
-import IosBadge from "../assets/badges/ios_appstore_badge.png";
-import Screenshot01 from "../assets/phones/screenshot1.png";
+import AndroidBadge from "../public/badges/android_playstore_badge.png";
+import IosBadge from "../public/badges/ios_appstore_badge.png";
+import Screenshot01 from "../public/phones/screenshot1.png";
 import axios from "axios";
 
 function Login() {
