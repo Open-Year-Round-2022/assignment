@@ -24,7 +24,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "npm run prisma",
+    "prisma": "prisma db pull && prisma generate"
   },
   "eslintConfig": {
     "extends": [
